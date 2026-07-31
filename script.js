@@ -10,9 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
      Adds .scrolled class when user scrolls past 50px
   ---------------------------------------------------------- */
   const navbar = document.getElementById('navbar');
+  const scrollProgress = document.getElementById('scroll-progress');
+  
   if (navbar) {
     window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      const scrollY = window.scrollY;
+      navbar.classList.toggle('scrolled', scrollY > 50);
+      
+      // Update top scroll progress bar dynamically
+      if (scrollProgress) {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = totalHeight > 0 ? (scrollY / totalHeight) * 100 : 0;
+        scrollProgress.style.width = `${progress}%`;
+      }
     });
   }
 
@@ -173,22 +183,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (canvas && container) {
     const ctx = canvas.getContext('2d');
 
-    /** Fit canvas to its container */
-    function resizeCanvas() {
-      canvas.width = container.offsetWidth;
-      canvas.height = container.offsetHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    // Accent palette (partial rgba strings — alpha appended per-use)
+    // Accent palette
     const accentColors = [
       'rgba(124, 106, 255,', // violet
       'rgba(212, 168, 67,',  // gold
       'rgba(46, 196, 182,',  // teal
     ];
 
-    // Mouse tracking relative to canvas
     let mouse = { x: -1000, y: -1000 };
 
     canvas.addEventListener('mousemove', (e) => {
@@ -212,19 +213,31 @@ document.addEventListener('DOMContentLoaded', () => {
       { passive: true }
     );
 
-    // Seed ~60 particles
-    const particles = [];
-    for (let i = 0; i < 60; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 2 + 1,
-        color: accentColors[Math.floor(Math.random() * accentColors.length)],
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        sinOffset: Math.random() * Math.PI * 2,
-      });
+    let particles = [];
+
+    /** Fit canvas to container and dynamically re-scale particle density */
+    function initParticles() {
+      canvas.width = container.offsetWidth;
+      canvas.height = container.offsetHeight;
+      
+      // Calculate optimal particle count based on screen resolution (min 30, max 100)
+      const targetCount = Math.min(100, Math.max(30, Math.floor((canvas.width * canvas.height) / 14000)));
+      
+      particles = [];
+      for (let i = 0; i < targetCount; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 2 + 1,
+          color: accentColors[Math.floor(Math.random() * accentColors.length)],
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          sinOffset: Math.random() * Math.PI * 2,
+        });
+      }
     }
+    initParticles();
+    window.addEventListener('resize', initParticles);
 
     /** Main render loop */
     function animateCanvas() {
@@ -453,6 +466,30 @@ document.addEventListener('DOMContentLoaded', () => {
       if (hero) {
         hero.scrollIntoView({ behavior: 'smooth' });
       }
+    });
+  }
+
+  /* ----------------------------------------------------------
+     14. Dynamic 3D Card Tilt Interaction
+     Adds dynamic 3D perspective tilt on hover across desktop & laptops
+  ---------------------------------------------------------- */
+  if (window.innerWidth > 768) {
+    const tiltCards = document.querySelectorAll('.service-card, .project-card, .skill-item, .creative-item');
+    tiltCards.forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -6;
+        const rotateY = ((x - centerX) / centerX) * 6;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
     });
   }
 });
