@@ -1,9 +1,10 @@
 /* ============================================================
-   script.js — Ian's Portfolio
+   script.js — Alok Kumar's Portfolio
    Pure vanilla JS · No external libraries
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ----------------------------------------------------------
      2. Navbar Scroll Effect
@@ -63,6 +64,20 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       navLinksContainer.classList.toggle('open');
+      const isOpen = navLinksContainer.classList.contains('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      if (isOpen && navLinksContainer.querySelector('a')) {
+        navLinksContainer.querySelector('a').focus();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navLinksContainer.classList.contains('open')) {
+        hamburger.classList.remove('active');
+        navLinksContainer.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.focus();
+      }
     });
 
     // Close menu when any nav link is clicked
@@ -97,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         targetEl.scrollIntoView({ behavior: 'smooth' });
+        history.replaceState(null, '', targetId);
       }
     });
   });
@@ -132,12 +148,10 @@ document.addEventListener('DOMContentLoaded', () => {
      Cycles through roles with type-then-delete animation
   ---------------------------------------------------------- */
   const roles = [
-    '⚡ Vibe Coder',
+    'Data Engineer',
     'Data Analyst',
-    'Prompt Engineer',
-    'Quant Systems Engineer',
-    'Technical Writer',
-    'R&D Specialist',
+    'AI Systems Builder',
+    'Python Developer',
   ];
   let roleIndex = 0;
   let charIndex = 0;
@@ -171,7 +185,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeWriter, delay);
   }
 
-  typeWriter();
+  if (prefersReducedMotion) {
+    if (roleText) roleText.textContent = roles[0];
+  } else {
+    typeWriter();
+  }
 
   /* ----------------------------------------------------------
      8. Interactive Particle Canvas
@@ -180,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById('hero-canvas');
   const container = document.querySelector('.hero-canvas-container');
 
-  if (canvas && container) {
+  if (canvas && container && !prefersReducedMotion) {
     const ctx = canvas.getContext('2d');
 
     // Accent palette
@@ -217,8 +235,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /** Fit canvas to container and dynamically re-scale particle density */
     function initParticles() {
-      canvas.width = container.offsetWidth;
-      canvas.height = container.offsetHeight;
+      const rect = container.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
       
       // Calculate optimal particle count based on screen resolution (min 30, max 100)
       const targetCount = Math.min(100, Math.max(30, Math.floor((canvas.width * canvas.height) / 14000)));
@@ -356,100 +377,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
   statNumbers.forEach((el) => statsObserver.observe(el));
 
-  /* ----------------------------------------------------------
-     11. Testimonials Auto-Scroll
-     Scrolls one card every 4 s, pauses on hover
-  ---------------------------------------------------------- */
-  const testimonialsTrack = document.getElementById('testimonials-track');
 
-  if (testimonialsTrack) {
-    let autoScrollInterval = null;
-
-    function startAutoScroll() {
-      autoScrollInterval = setInterval(() => {
-        const firstCard = testimonialsTrack.firstElementChild;
-        if (!firstCard) return;
-
-        // Card width + gap (read computed gap or default to 24px)
-        const gap =
-          parseInt(getComputedStyle(testimonialsTrack).gap, 10) || 24;
-        const scrollAmount = firstCard.offsetWidth + gap;
-
-        // If we've reached the end, reset to start
-        if (
-          testimonialsTrack.scrollLeft + testimonialsTrack.offsetWidth >=
-          testimonialsTrack.scrollWidth
-        ) {
-          testimonialsTrack.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          testimonialsTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        }
-      }, 4000);
-    }
-
-    startAutoScroll();
-
-    // Pause on hover
-    testimonialsTrack.addEventListener('mouseenter', () => {
-      clearInterval(autoScrollInterval);
-    });
-
-    testimonialsTrack.addEventListener('mouseleave', () => {
-      startAutoScroll();
-    });
-  }
 
   /* ----------------------------------------------------------
-     12. Contact Form (simulated submit)
+     12. Contact Form (Formspree)
      Validates, shows loading state, then success message
   ---------------------------------------------------------- */
   const contactForm = document.getElementById('contact-form');
-
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      // Validate required fields
+      // Client-side validation
       const requiredFields = contactForm.querySelectorAll('[required]');
       let isValid = true;
-
       requiredFields.forEach((field) => {
         if (!field.value.trim()) {
-          isValid = false;
           field.classList.add('error');
+          isValid = false;
         } else {
           field.classList.remove('error');
         }
       });
-
       if (!isValid) return;
 
+      const btnText = document.querySelector('.btn-text');
+      const btnLoading = document.querySelector('.btn-loading');
+      const formSuccess = document.getElementById('form-success');
+      const formError = document.getElementById('form-error');
+      const submitBtn = document.getElementById('btn-submit');
+
       // Show loading state
-      const btnLoading = contactForm.querySelector('.btn-loading');
-      const btnText = contactForm.querySelector('.btn-text');
-
       if (btnText) btnText.style.display = 'none';
-      if (btnLoading) btnLoading.style.display = 'inline-block';
+      if (btnLoading) btnLoading.style.display = 'inline';
+      if (submitBtn) submitBtn.disabled = true;
+      if (formError) formError.style.display = 'none';
 
-      // Simulate network request (2 s)
-      setTimeout(() => {
-        // Restore button
-        if (btnText) btnText.style.display = '';
-        if (btnLoading) btnLoading.style.display = 'none';
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' },
+        });
 
-        // Show success message
-        const successMsg = document.getElementById('form-success');
-        if (successMsg) {
-          successMsg.style.display = 'block';
-
-          // Hide after 3 seconds
+        if (response.ok) {
+          if (formSuccess) formSuccess.style.display = 'block';
+          contactForm.reset();
           setTimeout(() => {
-            successMsg.style.display = 'none';
-          }, 3000);
+            if (formSuccess) formSuccess.style.display = 'none';
+          }, 5000);
+        } else {
+          throw new Error('Form submission failed');
         }
-
-        contactForm.reset();
-      }, 2000);
+      } catch (error) {
+        if (formError) formError.style.display = 'block';
+        setTimeout(() => {
+          if (formError) formError.style.display = 'none';
+        }, 5000);
+      } finally {
+        if (btnText) btnText.style.display = 'inline';
+        if (btnLoading) btnLoading.style.display = 'none';
+        if (submitBtn) submitBtn.disabled = false;
+      }
     });
   }
 
@@ -473,7 +462,7 @@ document.addEventListener('DOMContentLoaded', () => {
      14. Dynamic 3D Card Tilt Interaction
      Adds dynamic 3D perspective tilt on hover across desktop & laptops
   ---------------------------------------------------------- */
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 768 && !prefersReducedMotion) {
     const tiltCards = document.querySelectorAll('.service-card, .project-card, .skill-item, .creative-item');
     tiltCards.forEach((card) => {
       card.addEventListener('mousemove', (e) => {

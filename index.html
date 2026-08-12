@@ -3,17 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alok Kumar | Vibe Coder · Data Analyst · AI Systems Engineer</title>
-  <meta name="description" content="Alok Kumar is a Vibe Coder, Data Analyst, Prompt Engineer, and Technical Writer building intelligent AI systems, quantitative engines, and modern data platforms." />
+  <title>Alok Kumar | Data Engineer · Data Analyst · AI Systems Builder</title>
+  <meta name="description" content="Alok Kumar — Data Engineer and Data Analyst building intelligent data pipelines, AI-powered applications, quantitative engines, and modern analytics platforms with Python, SQL, and cloud tools." />
+  <link rel="canonical" href="https://alokkr00.github.io/Portfolio/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Alok Kumar | Vibe Coder · Data Analyst · AI Systems Engineer" />
-  <meta property="og:description" content="Portfolio of Alok Kumar — Vibe Coding, Data Science, AI Systems, Quantitative Trading Engines, and Technical Research." />
+  <meta property="og:title" content="Alok Kumar | Data Engineer · Data Analyst" />
+  <meta property="og:description" content="Portfolio of Alok Kumar — Data Engineering, Analytics, AI Systems, Quantitative Trading Engines, and Technical Research." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://github.com/Alokkr00" />
+  <meta property="og:url" content="https://alokkr00.github.io/Portfolio/" />
+  <meta property="og:site_name" content="Alok Kumar — Portfolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Alok Kumar | Data Engineer · Data Analyst" />
+  <meta name="twitter:description" content="Data Engineering, Analytics, AI Systems, and Quantitative Trading — Alok Kumar's portfolio." />
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,20 +36,23 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Alok Kumar",
-    "jobTitle": "Vibe Coder & Data Analyst",
-    "url": "https://github.com/Alokkr00",
+    "jobTitle": "Data Engineer & Data Analyst",
+    "url": "https://alokkr00.github.io/Portfolio/",
     "sameAs": [
       "https://github.com/Alokkr00",
       "https://www.linkedin.com/in/alok-kumar-18914b176/"
     ],
-    "knowsAbout": ["Vibe Coding", "Data Analysis", "Prompt Engineering", "TypeScript", "Python", "Quantitative Trading", "Research & Development"]
+    "knowsAbout": ["Data Engineering", "Data Analysis", "Python", "SQL", "AI Systems", "TypeScript", "Quantitative Trading", "DSA", "Machine Learning"]
   }
   </script>
 </head>
 <body>
 
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- ========== Background Orbs ========== -->
-  <div class="bg-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
+  <div class="bg-orbs" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
 
   <!-- ========== Navigation ========== -->
   <nav class="navbar" id="navbar">
@@ -55,14 +65,13 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#creative">Creative</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#testimonials">Voices</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme">
           <span class="theme-icon">🌙</span>
         </button>
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
           <span></span>
           <span></span>
           <span></span>
@@ -73,7 +82,7 @@
 
   <!-- ========== Hero Section ========== -->
   <section class="hero" id="hero">
-    <div class="hero-canvas-container">
+    <div class="hero-canvas-container" aria-hidden="true">
       <canvas id="hero-canvas"></canvas>
     </div>
     <div class="hero-content">
@@ -82,40 +91,42 @@
       <div class="hero-roles reveal reveal-delay-2">
         <span class="role-text" id="role-text"></span><span class="typewriter-cursor">|</span>
       </div>
-      <p class="hero-description reveal reveal-delay-3">Building modern full-stack platforms, quantitative engines, and AI workflows through ⚡ <strong>Vibe Coding</strong>, analytical precision, and deep technical research.</p>
+      <p class="hero-description reveal reveal-delay-3">I build data pipelines, analytics platforms, and AI-powered applications — turning raw data into clear decisions with Python, SQL, and modern cloud tools.</p>
       <div class="hero-cta reveal reveal-delay-4">
-        <a href="#projects" class="btn-primary">Explore Featured Projects</a>
-        <a href="#contact" class="btn-secondary">Let's Connect</a>
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-secondary">Get in Touch</a>
       </div>
     </div>
   </section>
+
+  <main id="main-content">
 
   <!-- ========== About Section ========== -->
   <section class="about" id="about">
     <div class="about-grid">
       <div class="about-image-container reveal">
         <div class="about-image" style="background: linear-gradient(135deg, #7C6AFF44, #2EC4B644, #D4A84344); display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:3.5rem; border: 1px solid var(--glass-border);">
-          ⚡
-          <span style="font-size: 1.1rem; margin-top: 10px; font-weight: 700; color: #FFF; font-family: 'Outfit'; letter-spacing: 0.5px;">Vibe Coder &amp; Engineer</span>
+          📊
+          <span style="font-size: 1.1rem; margin-top: 10px; font-weight: 700; color: #FFF; font-family: 'Outfit'; letter-spacing: 0.5px;">Data Engineer &amp; Analyst</span>
         </div>
       </div>
       <div class="about-text">
         <span class="section-label reveal">— Who I Am</span>
-        <h2 class="section-title reveal reveal-delay-1">Blending <span class="highlight">Vibe Coding</span> with <span class="highlight">Data Science</span></h2>
-        <p class="reveal reveal-delay-2">I am Alok Kumar, a developer and data professional who combines AI-assisted rapid creation (Vibe Coding) with deep software engineering and quantitative data analysis. I specialize in building end-to-end full-stack platforms, algorithmic engines, and AI workflow automation.</p>
-        <p class="reveal reveal-delay-2">Whether it's deploying GatherCraft on Next.js, architecting the HATS algorithmic trading engine, conducting network security anomaly research, or writing technical documentation — I bring fast iteration, structural logic, and visual elegance to every project.</p>
+        <h2 class="section-title reveal reveal-delay-1">Blending <span class="highlight">Data Engineering</span> with <span class="highlight">Analytical Thinking</span></h2>
+        <p class="reveal reveal-delay-2">I'm Alok Kumar — a Data Engineer and Analyst with strong foundations in DSA, Python, and SQL. I build end-to-end data pipelines, analytics dashboards, and AI-integrated applications that turn messy data into clear, actionable insights.</p>
+        <p class="reveal reveal-delay-2">From deploying GatherCraft with AI-assisted workflows, to architecting the HATS quantitative trading engine, to conducting network intrusion analysis — I bring structured thinking, clean code, and a bias for shipping to every project.</p>
         <div class="about-stats reveal reveal-delay-3">
           <div class="stat-card">
             <span class="stat-number" data-target="25">0</span><span class="stat-suffix">+</span>
             <span class="stat-label">GitHub Repos</span>
           </div>
           <div class="stat-card">
-            <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
-            <span class="stat-label">AI &amp; Data Apps</span>
+            <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Projects Shipped</span>
           </div>
           <div class="stat-card">
-            <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
-            <span class="stat-label">Vibe Efficiency</span>
+            <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Data &amp; AI Tools</span>
           </div>
         </div>
         <a href="https://github.com/Alokkr00" target="_blank" rel="noopener noreferrer" class="btn-resume reveal reveal-delay-4">View GitHub Profile ↗</a>
@@ -130,7 +141,7 @@
       <h2 class="section-title">Core Disciplines &amp; Capabilities</h2>
       <div class="bento-grid">
 
-        <!-- Service 1: Vibe Coding & Full-Stack (Featured) -->
+        <!-- Service 1: Data Engineering & Pipelines (Featured) -->
         <div class="service-card service-featured">
           <div class="service-icon">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -139,8 +150,8 @@
               <path d="M20 44l8-40" />
             </svg>
           </div>
-          <h3>⚡ Vibe Coding &amp; Rapid Development</h3>
-          <p>Leveraging agentic AI tools, Next.js 14, TypeScript, and Python to turn bold product ideas into production-ready web apps and APIs at unprecedented speed with seamless UX.</p>
+          <h3>📊 Data Engineering &amp; Pipelines</h3>
+          <p>Building robust data pipelines, ETL workflows, and analytics platforms using Python, SQL, Pandas, and cloud tools — transforming raw data into structured, queryable insights.</p>
           <a href="#projects" class="service-link">Explore Projects <span>&rarr;</span></a>
         </div>
 
@@ -391,55 +402,7 @@
     </div>
   </section>
 
-  <!-- ========== Testimonials ========== -->
-  <section class="testimonials" id="testimonials">
-    <div class="testimonials-container">
-      <span class="section-label">— Real Feedback</span>
-      <h2 class="section-title">What Collaborators &amp; Teammates Say</h2>
-      <div class="testimonials-track" id="testimonials-track">
 
-        <!-- Testimonial 1 -->
-        <div class="testimonial-card">
-          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-          <blockquote class="testimonial-quote">"Working with Alok on GatherCraft was super smooth. I pitched the host workflow expecting a long dev cycle, but he had a working Next.js prototype with Gemini AI integration ready in just a couple of days. He doesn't just code fast — he actually cares about how the UI feels when someone uses it."</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #7C6AFF, #2EC4B6); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700;">AR</div>
-            <div>
-              <span class="testimonial-name">Alex Rivera</span>
-              <span class="testimonial-title">Product Teammate · GatherCraft</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="testimonial-card">
-          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-          <blockquote class="testimonial-quote">"Alok built H.A.T.S with crazy attention to detail. Most quant side-projects skip risk management entirely, but he built out a full 15-scenario stress grid and SQLite database triggers so orders can't glitch. Super clean Python code and standard docs too."</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #D4A843, #7C6AFF); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700;">MV</div>
-            <div>
-              <span class="testimonial-name">Marcus Vance</span>
-              <span class="testimonial-title">Quant Systems Contributor</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="testimonial-card">
-          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-          <blockquote class="testimonial-quote">"Alok helped clean up and analyze our network traffic datasets for intrusion detection. He pulled out clear anomaly patterns without getting bogged down in fluff, and walked us through the model results step by step. Really reliable guy to have on a team."</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #2EC4B6, #D4A843); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700;">ER</div>
-            <div>
-              <span class="testimonial-name">Elena Rostova</span>
-              <span class="testimonial-title">Security Analytics Peer</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   <!-- ========== Contact ========== -->
   <section class="contact" id="contact">
@@ -450,7 +413,7 @@
         <div class="contact-info">
           <span class="section-label">— Get In Touch</span>
           <h2 class="section-title">Let me build your next idea</h2>
-          <p>Looking for a high-speed Vibe Coder, Data Analyst, or AI Systems Engineer? Reach out directly via GitHub, LinkedIn, or send a message below.</p>
+          <p>Need a Data Engineer, Analyst, or someone to build your next AI-powered tool? Reach out directly via GitHub, LinkedIn, or send a message below.</p>
           <ul class="contact-links">
             <li>🐙 <a href="https://github.com/Alokkr00" target="_blank" rel="noopener noreferrer">github.com/Alokkr00</a></li>
             <li>💼 <a href="https://www.linkedin.com/in/alok-kumar-18914b176/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
@@ -461,22 +424,22 @@
 
         <!-- Contact Form -->
         <div class="contact-form-wrapper reveal">
-          <form class="contact-form" id="contact-form">
+          <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <div class="form-group">
               <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="John Doe" required />
+              <input type="text" id="name" name="name" placeholder="John Doe" autocomplete="name" required />
             </div>
             <div class="form-group">
               <label for="email">Your Email</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" required />
             </div>
             <div class="form-group">
               <label for="subject">Subject</label>
               <select id="subject" name="subject" required>
                 <option value="" disabled selected>Select a subject</option>
-                <option value="vibe-coding">Vibe Coding / Rapid Build</option>
+                <option value="data-engineering">Data Engineering &amp; Pipelines</option>
                 <option value="data-analysis">Data Analysis &amp; ML</option>
-                <option value="prompt-engineering">Prompt Engineering &amp; AI</option>
+                <option value="ai-development">AI-Assisted Development</option>
                 <option value="quant-trading">Quant Trading Systems</option>
                 <option value="technical-writing">Technical Writing &amp; Research</option>
                 <option value="other">Other Collaboration</option>
@@ -490,13 +453,17 @@
               <span class="btn-text">Send Message</span>
               <span class="btn-loading" style="display:none;">Sending...</span>
             </button>
-            <p class="form-success" id="form-success" style="display:none;">✅ Message sent successfully! Alok will get back to you soon.</p>
+            <p class="form-success" id="form-success" style="display:none;" role="status" aria-live="polite">✅ Message sent successfully! I'll get back to you soon.</p>
+            <p class="form-error" id="form-error" style="display:none;" role="alert" aria-live="assertive">❌ Something went wrong. Please try again or email me directly.</p>
+            <p class="form-privacy">Your information is sent securely via Formspree and is never shared.</p>
           </form>
         </div>
 
       </div>
     </div>
   </section>
+
+  </main><!-- end #main-content -->
 
   <!-- ========== Footer ========== -->
   <footer class="footer">
@@ -520,7 +487,7 @@
         </a>
 
       </div>
-      <p class="footer-text">&copy; 2026 Alok Kumar. Built with ⚡ Vibe Coding, precision &amp; passion.</p>
+      <p class="footer-text">&copy; 2026 Alok Kumar. Built with precision, data, &amp; passion.</p>
       <a href="#hero" class="back-to-top" aria-label="Back to top">&uarr; Back to Top</a>
     </div>
   </footer>

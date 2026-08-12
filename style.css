@@ -819,8 +819,16 @@ ul, ol {
   z-index: 1;
 }
 
-.project-card:hover .project-overlay {
+.project-card:hover .project-overlay,
+.project-card:focus-within .project-overlay {
   opacity: 1;
+}
+
+@media (hover: none) {
+  .project-overlay {
+    opacity: 1;
+    background: rgba(10, 10, 15, 0.6);
+  }
 }
 
 .btn-project {
@@ -1680,6 +1688,24 @@ ul, ol {
   border: 1px solid rgba(46, 196, 182, 0.2);
 }
 
+.form-error {
+  color: #FF6B6B;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.form-privacy {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
 /* ======================
    21. Mobile Creative Overlay (touch devices)
    ====================== */
@@ -1767,3 +1793,68 @@ ul, ol {
   }
 }
 
+
+/* ======================
+   Accessibility & Motion
+   ====================== */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  z-index: 10000;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent-primary);
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.skip-link:focus {
+  left: 0;
+  top: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+}
+
+.hero, .about, .services, .projects,
+.artistic-showcase, .skills, .contact {
+  scroll-margin-top: 80px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .orb {
+    animation: none !important;
+  }
+
+  .typewriter-cursor {
+    animation: none !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .creative-item,
+  .service-card,
+  .project-card,
+  .skill-item,
+  .testimonial-card {
+    transition: none !important;
+  }
+
+  .scroll-progress {
+    transition: none !important;
+  }
+}
