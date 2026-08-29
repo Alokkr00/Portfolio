@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alok Kumar | Data Engineer · Data Analyst · AI Systems Builder</title>
-  <meta name="description" content="Alok Kumar — Data Engineer and Data Analyst building intelligent data pipelines, AI-powered applications, quantitative engines, and modern analytics platforms with Python, SQL, and cloud tools." />
+  <title>Alok Kumar | Data Engineer · Data Analyst · Systems Builder</title>
+  <meta name="description" content="Alok Kumar — Data Engineer and Data Analyst building high-throughput data pipelines, algorithmic trading infrastructure, and AI-powered analytical systems." />
   <link rel="canonical" href="https://alokkr00.github.io/Portfolio/" />
 
   <!-- Open Graph -->
@@ -25,7 +25,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
@@ -42,7 +42,7 @@
       "https://github.com/Alokkr00",
       "https://www.linkedin.com/in/alok-kumar-18914b176/"
     ],
-    "knowsAbout": ["Data Engineering", "Data Analysis", "Python", "SQL", "AI Systems", "TypeScript", "Quantitative Trading", "DSA", "Machine Learning"]
+    "knowsAbout": ["Data Engineering", "Data Analysis", "Python", "SQL", "ETL Pipelines", "AI Systems", "TypeScript", "Quantitative Trading", "DSA", "Machine Learning"]
   }
   </script>
 </head>
@@ -51,8 +51,12 @@
   <!-- Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ========== Background Orbs ========== -->
-  <div class="bg-orbs" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
+  <!-- ========== Background Orbs & Ambient Mesh ========== -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
 
   <!-- ========== Navigation ========== -->
   <nav class="navbar" id="navbar">
@@ -61,9 +65,9 @@
       <a href="#" class="nav-logo">Alok<span class="logo-dot">.</span></a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#services">Capabilities</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#skills">Tech Stack</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
@@ -79,20 +83,32 @@
     </div>
   </nav>
 
-  <!-- ========== Hero Section ========== -->
+  <!-- ========== Hero Section (Pipeline Ingress) ========== -->
   <section class="hero" id="hero">
     <div class="hero-canvas-container" aria-hidden="true">
       <canvas id="hero-canvas"></canvas>
     </div>
     <div class="hero-content">
+      <div class="pipeline-status-badge reveal">
+        <span class="status-dot"></span>
+        <span>Pipeline Status: Online · Open to Opportunities</span>
+      </div>
+      
       <p class="hero-greeting reveal">👋 Hello, I'm</p>
       <h1 class="hero-name reveal reveal-delay-1">Alok Kumar</h1>
-      <div class="hero-roles reveal reveal-delay-2">
-        <span class="role-text" id="role-text"></span><span class="typewriter-cursor">|</span>
+      
+      <div class="hero-role-wrapper reveal reveal-delay-2">
+        <span class="terminal-prompt">$ alok --role</span>
+        <span class="role-text" id="role-text">Data Engineer</span>
+        <span class="typewriter-cursor">|</span>
       </div>
-      <p class="hero-description reveal reveal-delay-3">I turn messy data into clear decisions and build the tools to automate the process — using Python, SQL, and modern cloud platforms.</p>
+      
+      <p class="hero-description reveal reveal-delay-3">
+        I architect high-throughput data pipelines, quantitative trading frameworks, and AI-powered analytical products — transforming complex datasets into clear, automated decisions.
+      </p>
+      
       <div class="hero-cta reveal reveal-delay-4">
-        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#projects" class="btn-primary">Explore Projects ↓</a>
         <a href="AlokResume.pdf" download class="btn-secondary">📄 Download Résumé</a>
         <a href="#contact" class="btn-secondary">Get in Touch</a>
       </div>
@@ -101,303 +117,405 @@
 
   <main id="main-content">
 
-  <!-- ========== About Section ========== -->
-  <section class="about" id="about">
-    <div class="about-grid">
-      <div class="about-image-container reveal">
-        <div class="about-image" style="background: linear-gradient(135deg, #7C6AFF44, #2EC4B644, #D4A84344); display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:3.5rem; border: 1px solid var(--glass-border);">
-          📊
-          <span style="font-size: 1.1rem; margin-top: 10px; font-weight: 700; color: #FFF; font-family: 'Outfit'; letter-spacing: 0.5px;">Data Engineer &amp; Analyst</span>
-        </div>
-      </div>
-      <div class="about-text">
-        <span class="section-label reveal">— Who I Am</span>
-        <h2 class="section-title reveal reveal-delay-1">Blending <span class="highlight">Data Engineering</span> with <span class="highlight">Analytical Thinking</span></h2>
-        <p class="reveal reveal-delay-2">I enjoy taking ambiguous data problems and turning them into clean pipelines, dashboards, and automation tools that people actually use. I have strong foundations in DSA, Python, and SQL, and I ship fast without cutting corners.</p>
-        <p class="reveal reveal-delay-2">From deploying GatherCraft with AI-assisted workflows, to architecting the HATS quantitative trading engine, to conducting network intrusion analysis — I bring structured thinking, clean code, and a bias for shipping to every project.</p>
-        <div class="about-stats reveal reveal-delay-3">
-          <div class="stat-card">
-            <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
-            <span class="stat-label">Projects Shipped</span>
+    <!-- ========== About Section (System Architecture) ========== -->
+    <section class="about" id="about">
+      <div class="about-grid">
+        
+        <!-- Left: Telemetry Profile Card -->
+        <div class="about-card reveal">
+          <div class="about-avatar-wrapper">
+            <div class="about-avatar-icon">📊</div>
+            <div class="about-profile-meta">
+              <h3>Alok Kumar</h3>
+              <p>Data Engineer & Analyst</p>
+            </div>
           </div>
-          <div class="stat-card">
-            <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
-            <span class="stat-label">Data &amp; AI Tools</span>
+          <div class="about-spec-list">
+            <div class="about-spec-item">
+              <span>Primary Core</span>
+              <span>Python · SQL · DSA</span>
+            </div>
+            <div class="about-spec-item">
+              <span>Data Systems</span>
+              <span>ETL · PostgreSQL · SQLite</span>
+            </div>
+            <div class="about-spec-item">
+              <span>Quantitative & AI</span>
+              <span>FastAPI · Scikit · LLMs</span>
+            </div>
+            <div class="about-spec-item">
+              <span>Availability</span>
+              <span style="color: var(--accent-emerald);">Open for Work</span>
+            </div>
           </div>
-          <div class="stat-card">
-            <span class="stat-number" data-target="3">0</span><span class="stat-suffix"></span>
-            <span class="stat-label">Stack: Python, SQL, TS</span>
-          </div>
-        </div>
-        <a href="AlokResume.pdf" download class="btn-resume reveal reveal-delay-4">📄 Download Résumé</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== Services Bento Grid ========== -->
-  <section class="services" id="services">
-    <div class="services-container">
-      <span class="section-label">— What I Do</span>
-      <h2 class="section-title">Core Disciplines &amp; Capabilities</h2>
-      <div class="bento-grid">
-
-        <!-- Service 1: Data Engineering & Pipelines (Featured) -->
-        <div class="service-card service-featured">
-          <div class="service-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M13 3L4 14l9 11 9-11-9-11z" />
-              <path d="M35 23l-9 11 9 11 9-11-9-11z" />
-              <path d="M20 44l8-40" />
-            </svg>
-          </div>
-          <h3>📊 Data Engineering &amp; Pipelines</h3>
-          <p>Building robust data pipelines, ETL workflows, and analytics platforms using Python, SQL, Pandas, and cloud tools — transforming raw data into structured, queryable insights.</p>
-          <a href="#projects" class="service-link">Explore Projects <span>&rarr;</span></a>
         </div>
 
-        <!-- Service 2: Data Analysis & ML -->
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="4 36 16 20 24 28 34 12 44 18" />
-              <line x1="4" y1="44" x2="44" y2="44" />
-              <line x1="4" y1="4" x2="4" y2="44" />
-            </svg>
+        <!-- Right: Professional Narrative -->
+        <div class="about-text">
+          <span class="section-label reveal">— Architecture & Approach</span>
+          <h2 class="section-title reveal reveal-delay-1">Bridging <span class="highlight">Data Engineering</span> with <span class="highlight">Algorithmic Precision</span></h2>
+          <p class="reveal reveal-delay-2">
+            I take ambiguous data workflows and transform them into resilient data pipelines, analytics engines, and automation tools. Rooted in deep Data Structures & Algorithms (DSA), Python, and SQL, I build software that prioritizes idempotency, query efficiency, and production uptime.
+          </p>
+          <p class="reveal reveal-delay-2">
+            Whether it's deploying GatherCraft with live AI copilot capabilities, designing H.A.T.S. with 15-scenario portfolio stress grids and immutable SQLite triggers, or performing cybersecurity anomaly detection — I bring structured thinking, clean code, and engineering rigor to every system.
+          </p>
+          
+          <div class="about-stats reveal reveal-delay-3">
+            <div class="stat-card">
+              <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Production Projects</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Stress Scenarios</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+              <span class="stat-label">Verified Delivery</span>
+            </div>
           </div>
-          <h3>Data Analysis &amp; Science</h3>
-          <p>Extracting deep patterns from complex datasets using Python, Pandas, NumPy, SQL, Jupyter, and Tableau for predictive modeling and security analytics.</p>
-          <a href="#contact" class="service-link">Learn more <span>&rarr;</span></a>
-        </div>
-
-        <!-- Service 3: Prompt Engineering & AI Integration -->
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="20" cy="20" r="14" />
-              <line x1="30" y1="30" x2="44" y2="44" />
-              <line x1="12" y1="20" x2="28" y2="20" />
-            </svg>
-          </div>
-          <h3>Prompt Engineering &amp; AI Integration</h3>
-          <p>Designing robust system prompts, RAG architectures, and AI API integrations (Gemini 1.5 Flash, GPT-4, Claude) for real-world automation.</p>
-          <a href="#contact" class="service-link">Learn more <span>&rarr;</span></a>
-        </div>
-
-        <!-- Service 4: Quant Engines & Financial Systems -->
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="6" y="6" width="36" height="36" rx="6" />
-              <path d="M16 24h16M24 16v16" />
-            </svg>
-          </div>
-          <h3>Quant Engines &amp; FinTech</h3>
-          <p>Architecting quantitative trading frameworks, 15-point portfolio stress grids, paper-trading OMS via Alpaca API, and immutable audit ledgers.</p>
-          <a href="#contact" class="service-link">Learn more <span>&rarr;</span></a>
-        </div>
-
-        <!-- Service 5: Technical Writing & R&D -->
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="8" y="4" width="32" height="40" rx="2" />
-              <line x1="16" y1="14" x2="32" y2="14" />
-              <line x1="16" y1="22" x2="32" y2="22" />
-            </svg>
-          </div>
-          <h3>Technical Writing &amp; Research</h3>
-          <p>Synthesizing complex technical architectures into crisp documentation, developer guides, SOPs, and deep-dive technical research papers.</p>
-          <a href="#contact" class="service-link">Learn more <span>&rarr;</span></a>
+          
+          <a href="AlokResume.pdf" download class="btn-resume reveal reveal-delay-4">📄 Download Complete Résumé</a>
         </div>
 
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========== Projects ========== -->
-  <section class="projects" id="projects">
-    <div class="projects-container">
-      <span class="section-label">— Selected Work</span>
-      <h2 class="section-title">Featured Projects from GitHub</h2>
-      <div class="projects-grid">
+    <!-- ========== Services / Capabilities Bento Grid ========== -->
+    <section class="services" id="services">
+      <div class="services-container">
+        <span class="section-label">— Capabilities</span>
+        <h2 class="section-title">High-Throughput Disciplines</h2>
+        
+        <div class="bento-grid">
 
-        <!-- Project 1: GatherCraft -->
-        <div class="project-card reveal">
-          <div class="project-image" style="background: linear-gradient(135deg, #7C6AFF66, #2EC4B644); display: flex; align-items: center; justify-content: center;">
-            <span style="font-family: 'Outfit'; font-size: 2.2rem; font-weight: 800; color: #FFF; text-shadow: 0 4px 20px rgba(0,0,0,0.5);">GatherCraft 🎉</span>
-            <div class="project-overlay">
-              <a href="https://gather-craft.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-project">Live Demo ↗</a>
-              <a href="https://github.com/Alokkr00/GatherCraft" target="_blank" rel="noopener noreferrer" class="btn-project" style="margin-left:8px; background:rgba(255,255,255,0.15);">GitHub ↗</a>
+          <!-- Discipline 1: Data Engineering (Featured) -->
+          <div class="service-card service-featured reveal">
+            <div>
+              <div class="service-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                  <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+              </div>
+              <h3>Data Pipelines & ETL Architecture</h3>
+              <p>Designing high-reliability ingestion streams, automated cleaning pipelines, and structured relational schemas using Python, SQL, and Pandas. Transforming raw data streams into analytics-ready models.</p>
             </div>
+            <a href="#projects" class="service-link">Explore Implementations <span>&rarr;</span></a>
           </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span class="project-tag">Next.js 14</span>
-              <span class="project-tag">Gemini AI</span>
-              <span class="project-tag">TypeScript</span>
-              <span class="project-tag">AI Integration</span>
+
+          <!-- Discipline 2: Quant & FinTech Systems -->
+          <div class="service-card reveal reveal-delay-1">
+            <div>
+              <div class="service-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+                  <polyline points="16 7 22 7 22 13"/>
+                </svg>
+              </div>
+              <h3>Quantitative Engines & FinTech</h3>
+              <p>Developing algorithmic paper-trading frameworks, real-time OMS with Alpaca API, 15-scenario portfolio stress testing grids, and immutable audit ledgers.</p>
             </div>
-            <h3>GatherCraft — AI-Powered Event Planner</h3>
-            <p class="project-result">A purpose-driven event planning app that helps hosts turn a vague event idea into a structured plan with AI-assisted refinement, live day-of coordination, and public RSVP links. I built the full Next.js frontend, integrated Gemini AI for event refinement, and designed the real-time host copilot workflow.</p>
+            <a href="#contact" class="service-link">Learn more <span>&rarr;</span></a>
           </div>
+
+          <!-- Discipline 3: AI Systems & LLM Automation -->
+          <div class="service-card reveal reveal-delay-2">
+            <div>
+              <div class="service-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/>
+                </svg>
+              </div>
+              <h3>AI Pipelines & Agentic Workflows</h3>
+              <p>Integrating state-of-the-art LLMs (Gemini API, Claude, GPT) with structured JSON schemas, function-calling workflows, and RAG architectures for real-time automation.</p>
+            </div>
+            <a href="#contact" class="service-link">Learn more <span>&rarr;</span></a>
+          </div>
+
+          <!-- Discipline 4: Data Analytics & Dashboards -->
+          <div class="service-card reveal reveal-delay-3">
+            <div>
+              <div class="service-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <line x1="3" y1="9" x2="21" y2="9"/>
+                  <line x1="9" y1="21" x2="9" y2="9"/>
+                </svg>
+              </div>
+              <h3>Analytics & Intelligence Dashboards</h3>
+              <p>Extracting statistical patterns, developing interactive Tableau/Power BI visualizations, and uncovering actionable business telemetry from multi-source data.</p>
+            </div>
+            <a href="#contact" class="service-link">Learn more <span>&rarr;</span></a>
+          </div>
+
         </div>
-
-        <!-- Project 2: HATS Trading Engine -->
-        <div class="project-card reveal">
-          <div class="project-image" style="background: linear-gradient(135deg, #D4A84366, #7C6AFF44); display: flex; align-items: center; justify-content: center;">
-            <span style="font-family: 'Outfit'; font-size: 2.2rem; font-weight: 800; color: #FFF; text-shadow: 0 4px 20px rgba(0,0,0,0.5);">H.A.T.S. Engine 📈</span>
-            <div class="project-overlay">
-              <a href="https://github.com/Alokkr00/HATS-Trading-Engine" target="_blank" rel="noopener noreferrer" class="btn-project">GitHub Repository ↗</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span class="project-tag">Python 3.11</span>
-              <span class="project-tag">FastAPI</span>
-              <span class="project-tag">Alpaca API</span>
-              <span class="project-tag">SQLite</span>
-            </div>
-            <h3>H.A.T.S. — Quantitative Trading Engine</h3>
-            <p class="project-result">A modular quantitative trading framework for paper-trading via Alpaca API. I designed the 15-scenario portfolio stress testing grid, built the FastAPI dashboard for real-time monitoring, and implemented SQLite triggers to enforce immutable audit logging on every order execution.</p>
-          </div>
-        </div>
-
-        <!-- Project 3: Network Intrusion Detection -->
-        <div class="project-card reveal">
-          <div class="project-image" style="background: linear-gradient(135deg, #2EC4B644, #7C6AFF44); display: flex; align-items: center; justify-content: center;">
-            <span style="font-family: 'Outfit'; font-size: 1.8rem; font-weight: 800; color: #FFF; text-shadow: 0 4px 20px rgba(0,0,0,0.5);">Security Analytics 🔒</span>
-            <div class="project-overlay">
-              <a href="https://github.com/Alokkr00/network-intrusion-detection-analysis" target="_blank" rel="noopener noreferrer" class="btn-project">GitHub Repository ↗</a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Pandas</span>
-              <span class="project-tag">Scikit-learn</span>
-              <span class="project-tag">Jupyter</span>
-            </div>
-            <h3>Network Intrusion Detection &amp; Analysis</h3>
-            <p class="project-result">An exploratory data analysis and ML classification pipeline that identifies anomalous network traffic patterns. I cleaned and transformed the raw dataset, built classification models in scikit-learn, and visualized attack-type distributions to assess detection accuracy across multiple algorithms.</p>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- ========== Projects Section (Engineering Case Studies) ========== -->
+    <section class="projects" id="projects">
+      <div class="projects-container">
+        <span class="section-label">— Case Studies</span>
+        <h2 class="section-title">Engineered Systems & Artifacts</h2>
+        
+        <div class="projects-grid">
 
+          <!-- Project 1: GatherCraft -->
+          <div class="project-card reveal">
+            <div class="project-visual" style="background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(129, 140, 248, 0.2));">
+              <span class="project-brand-badge">GatherCraft 🎉</span>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">Next.js 14</span>
+                <span class="project-tag">Gemini API</span>
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">AI Copilot</span>
+              </div>
+              <h3>GatherCraft — AI-Powered Event Engine</h3>
+              <p class="project-result">
+                A purpose-driven gathering platform that turns ambiguous event concepts into structured timelines with AI refinement, live day-of coordination, and public magic-link RSVPs. I built the full Next.js application, integrated Gemini AI for schedule generation, and created the real-time host copilot workflow.
+              </p>
+              <div class="project-actions">
+                <a href="https://gather-craft.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-project primary">Live Demo ↗</a>
+                <a href="https://github.com/Alokkr00/GatherCraft" target="_blank" rel="noopener noreferrer" class="btn-project">GitHub Repo ↗</a>
+              </div>
+            </div>
+          </div>
 
-  <!-- ========== Skills ========== -->
-  <section class="skills" id="skills">
-    <div class="skills-container">
-      <span class="section-label">— My Toolkit</span>
-      <h2 class="section-title">Skills &amp; Technologies</h2>
-      <div class="skills-grid">
-        <div class="skill-item reveal"><div class="skill-icon">🐍</div><span class="skill-name">Python</span></div>
-        <div class="skill-item reveal"><div class="skill-icon">🗃️</div><span class="skill-name">SQL / SQLite</span></div>
-        <div class="skill-item reveal"><div class="skill-icon">📊</div><span class="skill-name">Pandas / NumPy</span></div>
-        <div class="skill-item reveal"><div class="skill-icon">📈</div><span class="skill-name">Power BI / Tableau</span></div>
-        <div class="skill-item reveal"><div class="skill-icon">📓</div><span class="skill-name">Jupyter</span></div>
-        <div class="skill-item reveal"><div class="skill-icon">🤖</div><span class="skill-name">Scikit-learn</span></div>
-        <div class="skill-item reveal"><div class="skill-icon">💙</div><span class="skill-name">TypeScript</span></div>
-        <div class="skill-item reveal"><div class="skill-icon">⚛️</div><span class="skill-name">Next.js</span></div>
-        <div class="skill-item reveal"><div class="skill-icon">🚀</div><span class="skill-name">FastAPI</span></div>
-        <div class="skill-item reveal"><div class="skill-icon">✨</div><span class="skill-name">Gemini API</span></div>
-        <div class="skill-item reveal"><div class="skill-icon">🔀</div><span class="skill-name">Git / GitHub</span></div>
-        <div class="skill-item reveal"><div class="skill-icon">☁️</div><span class="skill-name">Vercel &amp; Firebase</span></div>
-      </div>
-    </div>
-  </section>
+          <!-- Project 2: HATS Trading Engine -->
+          <div class="project-card reveal reveal-delay-1">
+            <div class="project-visual" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(16, 185, 129, 0.2));">
+              <span class="project-brand-badge">H.A.T.S. Engine 📈</span>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">Python 3.11</span>
+                <span class="project-tag">FastAPI</span>
+                <span class="project-tag">Alpaca API</span>
+                <span class="project-tag">SQLite Triggers</span>
+              </div>
+              <h3>H.A.T.S. — Quantitative Trading Engine</h3>
+              <p class="project-result">
+                A modular quantitative trading framework for automated paper-trading via Alpaca API. I engineered the 15-scenario portfolio stress testing matrix, constructed the FastAPI telemetry server, and implemented database-level SQLite triggers to guarantee an immutable audit ledger on every executed order.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/Alokkr00/HATS-Trading-Engine" target="_blank" rel="noopener noreferrer" class="btn-project primary">GitHub Repository ↗</a>
+              </div>
+            </div>
+          </div>
 
+          <!-- Project 3: Network Intrusion Detection -->
+          <div class="project-card reveal reveal-delay-2">
+            <div class="project-visual" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(0, 229, 255, 0.2));">
+              <span class="project-brand-badge">Security Analytics 🔒</span>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Pandas</span>
+                <span class="project-tag">Scikit-learn</span>
+                <span class="project-tag">Jupyter</span>
+              </div>
+              <h3>Network Intrusion Detection & Analysis</h3>
+              <p class="project-result">
+                An end-to-end data analytics and machine learning classification pipeline detecting malicious network traffic patterns. I preprocessed and engineered multi-dimensional traffic data, trained Scikit-learn anomaly classifiers, and visualized attack distributions for high-accuracy cybersecurity threat scoring.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/Alokkr00/network-intrusion-detection-analysis" target="_blank" rel="noopener noreferrer" class="btn-project primary">GitHub Repository ↗</a>
+              </div>
+            </div>
+          </div>
 
-
-  <!-- ========== Contact ========== -->
-  <section class="contact" id="contact">
-    <div class="contact-container">
-      <div class="contact-grid">
-
-        <!-- Contact Info -->
-        <div class="contact-info">
-          <span class="section-label">— Get In Touch</span>
-          <h2 class="section-title">Let me build your next idea</h2>
-          <p>Have a data problem, pipeline to build, or an analytics project? Drop me a line — I'm open to full-time roles and freelance collaboration.</p>
-          <ul class="contact-links">
-            <li>📧 <a href="mailto:kishorealok99@gmail.com">kishorealok99@gmail.com</a></li>
-            <li>🐙 <a href="https://github.com/Alokkr00" target="_blank" rel="noopener noreferrer">github.com/Alokkr00</a></li>
-            <li>💼 <a href="https://www.linkedin.com/in/alok-kumar-18914b176/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
-            <li>📄 <a href="AlokResume.pdf" download>Download Résumé</a></li>
-            <li>📍 Remote — Open for Full-Time &amp; Freelance</li>
-          </ul>
         </div>
-
-        <!-- Contact Form -->
-        <div class="contact-form-wrapper reveal">
-          <form class="contact-form" id="contact-form" action="https://formspree.io/f/mljrnrpe" method="POST">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="John Doe" autocomplete="name" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Your Email</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" required />
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <select id="subject" name="subject" required>
-                <option value="" disabled selected>Select a subject</option>
-                <option value="data-engineering">Data Engineering &amp; Pipelines</option>
-                <option value="data-analysis">Data Analysis &amp; ML</option>
-                <option value="ai-development">AI-Assisted Development</option>
-                <option value="quant-trading">Quant Trading Systems</option>
-                <option value="technical-writing">Technical Writing &amp; Research</option>
-                <option value="other">Other Collaboration</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Your Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-            </div>
-            <button type="submit" class="btn-submit" id="btn-submit">
-              <span class="btn-text">Send Message</span>
-              <span class="btn-loading" style="display:none;">Sending...</span>
-            </button>
-            <p class="form-success" id="form-success" style="display:none;" role="status" aria-live="polite">✅ Message sent successfully! I'll get back to you soon.</p>
-            <p class="form-error" id="form-error" style="display:none;" role="alert" aria-live="assertive">❌ Something went wrong. Please try again or email me directly.</p>
-            <p class="form-privacy">Your information is sent securely via Formspree and is never shared.</p>
-          </form>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  </main><!-- end #main-content -->
+    <!-- ========== Skills & Tech Matrix ========== -->
+    <section class="skills" id="skills">
+      <div class="skills-container">
+        <span class="section-label">— Tech Stack</span>
+        <h2 class="section-title">Technical Matrix & Toolkit</h2>
+        
+        <div class="skills-matrix">
+          
+          <!-- Category 1: Core & Languages -->
+          <div class="skill-category-card reveal">
+            <div class="skill-category-header">
+              <span class="skill-category-icon">⚡</span>
+              <h3>Core & Languages</h3>
+            </div>
+            <div class="skill-pills-wrap">
+              <span class="skill-pill">🐍 Python 3.11</span>
+              <span class="skill-pill">🗃️ SQL / PL-SQL</span>
+              <span class="skill-pill">💙 TypeScript</span>
+              <span class="skill-pill">💻 Bash Scripting</span>
+              <span class="skill-pill">🧱 DSA Algorithms</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Data & Storage -->
+          <div class="skill-category-card reveal reveal-delay-1">
+            <div class="skill-category-header">
+              <span class="skill-category-icon">🗄️</span>
+              <h3>Data & Databases</h3>
+            </div>
+            <div class="skill-pills-wrap">
+              <span class="skill-pill">📊 Pandas / NumPy</span>
+              <span class="skill-pill">🐘 PostgreSQL</span>
+              <span class="skill-pill">💾 SQLite</span>
+              <span class="skill-pill">🔄 ETL Pipelines</span>
+              <span class="skill-pill">📐 Schema Design</span>
+            </div>
+          </div>
+
+          <!-- Category 3: AI & Analytics -->
+          <div class="skill-category-card reveal reveal-delay-2">
+            <div class="skill-category-header">
+              <span class="skill-category-icon">🤖</span>
+              <h3>AI & Analytics</h3>
+            </div>
+            <div class="skill-pills-wrap">
+              <span class="skill-pill">✨ Gemini API</span>
+              <span class="skill-pill">🧠 Scikit-learn</span>
+              <span class="skill-pill">📈 Power BI</span>
+              <span class="skill-pill">📉 Tableau</span>
+              <span class="skill-pill">📓 Jupyter Notebooks</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Backend & Cloud -->
+          <div class="skill-category-card reveal reveal-delay-3">
+            <div class="skill-category-header">
+              <span class="skill-category-icon">☁️</span>
+              <h3>Backend & Cloud</h3>
+            </div>
+            <div class="skill-pills-wrap">
+              <span class="skill-pill">🚀 FastAPI</span>
+              <span class="skill-pill">⚛️ Next.js 14</span>
+              <span class="skill-pill">🔀 Git / GitHub</span>
+              <span class="skill-pill">🌐 RESTful APIs</span>
+              <span class="skill-pill">▲ Vercel Cloud</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Contact Section (Secure Channel) ========== -->
+    <section class="contact" id="contact">
+      <div class="contact-container">
+        <div class="contact-grid">
+
+          <!-- Left Info Column -->
+          <div class="contact-info">
+            <span class="section-label">— Ingress & Contact</span>
+            <h2 class="section-title">Let's Build Data Systems Together</h2>
+            <p>
+              Have a data pipeline to architect, analytics workflows to build, or an open engineering role? Connect directly via email, GitHub, LinkedIn, or submit a message below.
+            </p>
+            
+            <div class="contact-channels-list">
+              <div class="contact-channel-card">
+                <div class="channel-icon">📧</div>
+                <div class="channel-meta">
+                  <strong>Direct Email</strong>
+                  <a href="mailto:kishorealok99@gmail.com">kishorealok99@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-channel-card">
+                <div class="channel-icon">🐙</div>
+                <div class="channel-meta">
+                  <strong>GitHub Profile</strong>
+                  <a href="https://github.com/Alokkr00" target="_blank" rel="noopener noreferrer">github.com/Alokkr00</a>
+                </div>
+              </div>
+
+              <div class="contact-channel-card">
+                <div class="channel-icon">💼</div>
+                <div class="channel-meta">
+                  <strong>LinkedIn Network</strong>
+                  <a href="https://www.linkedin.com/in/alok-kumar-18914b176/" target="_blank" rel="noopener noreferrer">in/alok-kumar-18914b176</a>
+                </div>
+              </div>
+
+              <div class="contact-channel-card">
+                <div class="channel-icon">📄</div>
+                <div class="channel-meta">
+                  <strong>PDF Résumé</strong>
+                  <a href="AlokResume.pdf" download>Download AlokResume.pdf</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Form Column -->
+          <div class="contact-form-wrapper reveal">
+            <form class="contact-form" id="contact-form" action="https://formspree.io/f/mljrnrpe" method="POST">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Alex Rivera" autocomplete="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email Address</label>
+                <input type="email" id="email" name="email" placeholder="alex@company.com" autocomplete="email" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Project Focus / Inquiry</label>
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>Select project focus</option>
+                  <option value="data-engineering">Data Pipelines & ETL Architecture</option>
+                  <option value="data-analysis">Data Analysis & Predictive Modeling</option>
+                  <option value="ai-integration">AI Pipelines & Agentic Systems</option>
+                  <option value="quant-trading">Quantitative Trading & OMS</option>
+                  <option value="fulltime-opportunity">Full-Time / Contract Role</option>
+                  <option value="other">Other Collaboration</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Project Scope / Details</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your dataset, project goals, or opportunity..." required></textarea>
+              </div>
+              <button type="submit" class="btn-submit" id="btn-submit">
+                <span class="btn-text">Transmit Message →</span>
+                <span class="btn-loading" style="display:none;">Transmitting...</span>
+              </button>
+              <p class="form-success" id="form-success" style="display:none;" role="status" aria-live="polite">✅ Message transmitted successfully! I'll get back to you promptly.</p>
+              <p class="form-error" id="form-error" style="display:none;" role="alert" aria-live="assertive">❌ Submission error. Please retry or contact kishorealok99@gmail.com directly.</p>
+              <p class="form-privacy">🔒 Encrypted via Formspree SSL. Your information is strictly confidential.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- ========== Footer ========== -->
   <footer class="footer">
     <div class="footer-content">
       <div class="social-links">
-
-        <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/alok-kumar-18914b176/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
-            <rect x="2" y="9" width="4" height="12" />
-            <circle cx="4" cy="4" r="2" />
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
           </svg>
         </a>
-
-        <!-- GitHub -->
         <a href="https://github.com/Alokkr00" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
           </svg>
         </a>
-
       </div>
-      <p class="footer-text">&copy; 2026 Alok Kumar. Built with precision, data, &amp; passion.</p>
-      <a href="#hero" class="back-to-top" aria-label="Back to top">&uarr; Back to Top</a>
+      <p class="footer-text">&copy; 2026 Alok Kumar. Engineered with precision, data integrity & passion.</p>
+      <a href="#hero" class="back-to-top" aria-label="Back to top">↑ Back to Top</a>
     </div>
   </footer>
 

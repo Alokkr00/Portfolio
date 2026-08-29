@@ -1,67 +1,61 @@
 /* ============================================================
-   script.js — Alok Kumar's Portfolio
-   Pure vanilla JS · No external libraries
+   PIPELINE THEME — script.js
+   High-performance Interactive Pipeline Particle Stream & Logic
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ----------------------------------------------------------
-     2. Navbar Scroll Effect
-     Adds .scrolled class when user scrolls past 50px
+     1. Navbar Scroll Effect & Dynamic Progress Indicator
   ---------------------------------------------------------- */
   const navbar = document.getElementById('navbar');
   const scrollProgress = document.getElementById('scroll-progress');
-  
+
   if (navbar) {
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
-      navbar.classList.toggle('scrolled', scrollY > 50);
-      
-      // Update top scroll progress bar dynamically
+      navbar.classList.toggle('scrolled', scrollY > 40);
+
       if (scrollProgress) {
         const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
         const progress = totalHeight > 0 ? (scrollY / totalHeight) * 100 : 0;
         scrollProgress.style.width = `${progress}%`;
       }
-    });
+    }, { passive: true });
   }
 
   /* ----------------------------------------------------------
-     3. Active Section Tracking (Intersection Observer)
-     Highlights the nav link matching the section in view
+     2. Active Section Tracking (Intersection Observer)
   ---------------------------------------------------------- */
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
 
-  const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          navLinks.forEach((link) => {
-            link.classList.toggle(
-              'active',
-              link.getAttribute('href') === `#${id}`
-            );
-          });
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
-
-  sections.forEach((section) => sectionObserver.observe(section));
+  if (sections.length > 0 && navLinks.length > 0) {
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach((link) => {
+              link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+    sections.forEach((section) => sectionObserver.observe(section));
+  }
 
   /* ----------------------------------------------------------
-     4. Hamburger Menu
-     Toggle open/close, close on link click & outside click
+     3. Accessible Mobile Navigation
   ---------------------------------------------------------- */
   const hamburger = document.getElementById('hamburger');
   const navLinksContainer = document.getElementById('nav-links');
 
   if (hamburger && navLinksContainer) {
-    hamburger.addEventListener('click', () => {
+    const toggleMenu = () => {
       hamburger.classList.toggle('active');
       navLinksContainer.classList.toggle('open');
       const isOpen = navLinksContainer.classList.contains('open');
@@ -69,9 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isOpen && navLinksContainer.querySelector('a')) {
         navLinksContainer.querySelector('a').focus();
       }
-    });
+    };
 
-    document.addEventListener('keydown', function (e) {
+    hamburger.addEventListener('click', toggleMenu);
+
+    document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && navLinksContainer.classList.contains('open')) {
         hamburger.classList.remove('active');
         navLinksContainer.classList.remove('open');
@@ -80,315 +76,302 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close menu when any nav link is clicked
     navLinksContainer.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navLinksContainer.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
       });
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-      if (
-        !hamburger.contains(e.target) &&
-        !navLinksContainer.contains(e.target)
-      ) {
+      if (!hamburger.contains(e.target) && !navLinksContainer.contains(e.target)) {
         hamburger.classList.remove('active');
         navLinksContainer.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
       }
     });
   }
 
   /* ----------------------------------------------------------
-     5. Smooth Scroll
-     Intercept all anchor links and scroll smoothly
+     4. Smooth Scroll with Hash Management
   ---------------------------------------------------------- */
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', (e) => {
-      const targetId = anchor.getAttribute('href');
-      if (targetId === '#' || targetId === '') return; // guard against bare # logo link
-      e.preventDefault();
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#' || targetId === '') return;
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
-        targetEl.scrollIntoView({ behavior: 'smooth' });
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
         history.replaceState(null, '', targetId);
       }
     });
   });
 
   /* ----------------------------------------------------------
-     6. Theme Toggle
-     Switch between dark / light, persist in localStorage
+     5. Theme Toggle & Local Storage
   ---------------------------------------------------------- */
   const themeToggle = document.getElementById('theme-toggle');
-  const themeIcon = document.querySelector('.theme-icon');
+  const themeIcon = themeToggle ? themeToggle.querySelector('.theme-icon') : null;
 
-  // Restore saved theme on load
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  if (themeIcon) {
-    themeIcon.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
-  }
+  const getSavedTheme = () => localStorage.getItem('theme') || 'dark';
+  const applyTheme = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (themeIcon) {
+      themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+    }
+  };
+
+  applyTheme(getSavedTheme());
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
       const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
+      applyTheme(next);
       localStorage.setItem('theme', next);
-      if (themeIcon) {
-        themeIcon.textContent = next === 'dark' ? '🌙' : '☀️';
-      }
     });
   }
 
   /* ----------------------------------------------------------
-     7. Typewriter Effect
-     Cycles through roles with type-then-delete animation
+     6. Role Typewriter Animation
   ---------------------------------------------------------- */
   const roles = [
     'Data Engineer',
     'Data Analyst',
     'AI Systems Builder',
-    'Python Developer',
+    'Quantitative Developer',
+    'Python & SQL Specialist'
   ];
-  let roleIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  const roleText = document.getElementById('role-text');
 
-  function typeWriter() {
-    if (!roleText) return;
-
-    const current = roles[roleIndex];
-
-    if (isDeleting) {
-      roleText.textContent = current.substring(0, charIndex - 1);
-      charIndex--;
+  const roleTextEl = document.getElementById('role-text');
+  if (roleTextEl) {
+    if (prefersReducedMotion) {
+      roleTextEl.textContent = roles[0];
     } else {
-      roleText.textContent = current.substring(0, charIndex + 1);
-      charIndex++;
+      let roleIdx = 0;
+      let charIdx = 0;
+      let isDeleting = false;
+
+      function typeWriterLoop() {
+        const currentRole = roles[roleIdx];
+        if (isDeleting) {
+          roleTextEl.textContent = currentRole.substring(0, charIdx - 1);
+          charIdx--;
+        } else {
+          roleTextEl.textContent = currentRole.substring(0, charIdx + 1);
+          charIdx++;
+        }
+
+        let delay = isDeleting ? 35 : 75;
+
+        if (!isDeleting && charIdx === currentRole.length) {
+          delay = 2200;
+          isDeleting = true;
+        } else if (isDeleting && charIdx === 0) {
+          isDeleting = false;
+          roleIdx = (roleIdx + 1) % roles.length;
+          delay = 450;
+        }
+
+        setTimeout(typeWriterLoop, delay);
+      }
+
+      typeWriterLoop();
     }
-
-    let delay = isDeleting ? 40 : 80;
-
-    if (!isDeleting && charIndex === current.length) {
-      delay = 2000; // pause at end of word
-      isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      roleIndex = (roleIndex + 1) % roles.length;
-      delay = 500; // brief pause before next word
-    }
-
-    setTimeout(typeWriter, delay);
-  }
-
-  if (prefersReducedMotion) {
-    if (roleText) roleText.textContent = roles[0];
-  } else {
-    typeWriter();
   }
 
   /* ----------------------------------------------------------
-     8. Interactive Particle Canvas
-     Floating particles with mouse attraction & connections
+     7. Interactive Pipeline Data Stream Canvas
   ---------------------------------------------------------- */
   const canvas = document.getElementById('hero-canvas');
-  const container = document.querySelector('.hero-canvas-container');
-
-  if (canvas && container && !prefersReducedMotion) {
+  if (canvas && !prefersReducedMotion) {
     const ctx = canvas.getContext('2d');
+    const container = document.querySelector('.hero-canvas-container');
+    let animationId;
+    let width, height;
 
-    // Accent palette
-    const accentColors = [
-      'rgba(124, 106, 255,', // violet
-      'rgba(212, 168, 67,',  // gold
-      'rgba(46, 196, 182,',  // teal
-    ];
+    function resize() {
+      if (!container) return;
+      const rect = container.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = rect.width;
+      height = rect.height;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.resetTransform();
+      ctx.scale(dpr, dpr);
+    }
 
-    let mouse = { x: -1000, y: -1000 };
+    resize();
+    window.addEventListener('resize', resize);
 
-    canvas.addEventListener('mousemove', (e) => {
+    const mouse = { x: -1000, y: -1000 };
+    container.addEventListener('mousemove', (e) => {
       const rect = canvas.getBoundingClientRect();
       mouse.x = e.clientX - rect.left;
       mouse.y = e.clientY - rect.top;
     });
 
-    canvas.addEventListener('mouseleave', () => {
+    container.addEventListener('mouseleave', () => {
       mouse.x = -1000;
       mouse.y = -1000;
     });
 
-    canvas.addEventListener(
-      'touchmove',
-      (e) => {
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.touches[0].clientX - rect.left;
-        mouse.y = e.touches[0].clientY - rect.top;
-      },
-      { passive: true }
-    );
+    // Generate Pipeline Nodes
+    const nodeCount = Math.min(Math.floor(window.innerWidth / 22), 55);
+    const nodes = [];
+    const colors = [
+      'rgba(0, 229, 255,',   // Cyber cyan
+      'rgba(56, 189, 248,',  // Pipeline blue
+      'rgba(16, 185, 129,',  // Emerald telemetry
+      'rgba(129, 140, 248,'  // Indigo AI
+    ];
 
-    let particles = [];
-
-    /** Fit canvas to container and dynamically re-scale particle density */
-    function initParticles() {
-      const rect = container.getBoundingClientRect();
-      const dpr = window.devicePixelRatio || 1;
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
-      ctx.scale(dpr, dpr);
-      
-      // Calculate optimal particle count based on screen resolution (min 30, max 100)
-      const targetCount = Math.min(100, Math.max(30, Math.floor((canvas.width * canvas.height) / 14000)));
-      
-      particles = [];
-      for (let i = 0; i < targetCount; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          radius: Math.random() * 2 + 1,
-          color: accentColors[Math.floor(Math.random() * accentColors.length)],
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-          sinOffset: Math.random() * Math.PI * 2,
-        });
-      }
+    for (let i = 0; i < nodeCount; i++) {
+      nodes.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        radius: Math.random() * 2 + 1.2,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        pulse: Math.random() * Math.PI * 2
+      });
     }
-    initParticles();
-    window.addEventListener('resize', initParticles);
 
-    /** Main render loop */
-    function animateCanvas() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const time = Date.now() * 0.001;
+    function renderPipeline() {
+      ctx.clearRect(0, 0, width, height);
+      const time = Date.now() * 0.0015;
 
-      particles.forEach((p, i) => {
-        // Sine-wave drift for organic movement
-        p.x += p.vx + Math.sin(time + p.sinOffset) * 0.15;
-        p.y += p.vy + Math.cos(time + p.sinOffset) * 0.15;
+      // Draw Connections (Data Buses)
+      for (let i = 0; i < nodes.length; i++) {
+        const n1 = nodes[i];
 
-        // Mouse attraction within 200px radius
-        const dx = mouse.x - p.x;
-        const dy = mouse.y - p.y;
+        // Move node
+        n1.x += n1.vx + Math.sin(time + n1.pulse) * 0.15;
+        n1.y += n1.vy + Math.cos(time + n1.pulse) * 0.15;
+
+        // Bounce
+        if (n1.x < 0 || n1.x > width) n1.vx *= -1;
+        if (n1.y < 0 || n1.y > height) n1.vy *= -1;
+
+        // Mouse interaction
+        const dx = mouse.x - n1.x;
+        const dy = mouse.y - n1.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 200 && dist > 0) {
-          p.x += dx * 0.008;
-          p.y += dy * 0.008;
+        if (dist < 180 && dist > 0) {
+          n1.x += dx * 0.008;
+          n1.y += dy * 0.008;
         }
 
-        // Bounce off canvas edges
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-        p.x = Math.max(0, Math.min(canvas.width, p.x));
-        p.y = Math.max(0, Math.min(canvas.height, p.y));
-
-        // Draw particle dot
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = p.color + '0.6)';
-        ctx.fill();
-
-        // Draw connections to nearby particles
-        for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const d = Math.sqrt((p.x - p2.x) ** 2 + (p.y - p2.y) ** 2);
-          if (d < 150) {
+        // Connect with nearby nodes
+        for (let j = i + 1; j < nodes.length; j++) {
+          const n2 = nodes[j];
+          const distNodes = Math.hypot(n1.x - n2.x, n1.y - n2.y);
+          if (distNodes < 140) {
+            const alpha = (1 - distNodes / 140) * 0.22;
             ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = p.color + (0.15 * (1 - d / 150)) + ')';
-            ctx.lineWidth = 0.5;
+            ctx.moveTo(n1.x, n1.y);
+            ctx.lineTo(n2.x, n2.y);
+            ctx.strokeStyle = `rgba(0, 229, 255, ${alpha})`;
+            ctx.lineWidth = 0.8;
             ctx.stroke();
           }
         }
-      });
 
-      requestAnimationFrame(animateCanvas);
+        // Draw Node
+        ctx.beginPath();
+        ctx.arc(n1.x, n1.y, n1.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `${n1.color} 0.85)`;
+        ctx.fill();
+      }
+
+      animationId = requestAnimationFrame(renderPipeline);
     }
 
-    animateCanvas();
+    renderPipeline();
+
+    // Pause canvas when document is not visible
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animationId);
+      } else {
+        renderPipeline();
+      }
+    });
   }
 
   /* ----------------------------------------------------------
-     9. Scroll Reveal
-     Elements with .reveal fade in once they enter viewport
+     8. Scroll Reveal Observer
   ---------------------------------------------------------- */
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target); // animate only once
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+  const revealElements = document.querySelectorAll('.reveal');
+  if (revealElements.length > 0) {
+    if (prefersReducedMotion) {
+      revealElements.forEach((el) => el.classList.add('visible'));
+    } else {
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      );
+      revealElements.forEach((el) => revealObserver.observe(el));
+    }
+  }
 
   /* ----------------------------------------------------------
-     10. Stats Counter Animation
-     Counts from 0 → data-target over 2 s with easeOutQuad
+     9. Stats Counter Animation
   ---------------------------------------------------------- */
   const statNumbers = document.querySelectorAll('.stat-number');
+  if (statNumbers.length > 0) {
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+            const duration = 1600;
+            const start = performance.now();
 
-  /**
-   * Animate a single stat element from 0 to its data-target.
-   * Uses easeOutQuad: t * (2 - t)
-   */
-  function animateCounter(el) {
-    const target = parseInt(el.getAttribute('data-target'), 10);
-    if (isNaN(target)) return;
+            function updateCounter(now) {
+              const elapsed = now - start;
+              const progress = Math.min(elapsed / duration, 1);
+              // easeOutQuart
+              const ease = 1 - Math.pow(1 - progress, 4);
+              el.textContent = Math.floor(ease * target);
 
-    const duration = 2000; // ms
-    const start = performance.now();
+              if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+              } else {
+                el.textContent = target;
+              }
+            }
 
-    function step(now) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = progress * (2 - progress); // easeOutQuad
-      el.textContent = Math.floor(eased * target);
-
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else {
-        el.textContent = target; // ensure exact final value
-      }
-    }
-
-    requestAnimationFrame(step);
+            requestAnimationFrame(updateCounter);
+            statsObserver.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    statNumbers.forEach((el) => statsObserver.observe(el));
   }
 
-  const statsObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          statsObserver.unobserve(entry.target); // animate only once
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  statNumbers.forEach((el) => statsObserver.observe(el));
-
-
-
   /* ----------------------------------------------------------
-     12. Contact Form (Formspree)
-     Validates, shows loading state, then success message
+     10. Contact Form Submission (Formspree Async Fetch)
   ---------------------------------------------------------- */
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      // Client-side validation
       const requiredFields = contactForm.querySelectorAll('[required]');
       let isValid = true;
       requiredFields.forEach((field) => {
@@ -401,16 +384,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       if (!isValid) return;
 
-      const btnText = document.querySelector('.btn-text');
-      const btnLoading = document.querySelector('.btn-loading');
+      const btnText = contactForm.querySelector('.btn-text');
+      const btnLoading = contactForm.querySelector('.btn-loading');
       const formSuccess = document.getElementById('form-success');
       const formError = document.getElementById('form-error');
       const submitBtn = document.getElementById('btn-submit');
 
-      // Show loading state
       if (btnText) btnText.style.display = 'none';
       if (btnLoading) btnLoading.style.display = 'inline';
       if (submitBtn) submitBtn.disabled = true;
+      if (formSuccess) formSuccess.style.display = 'none';
       if (formError) formError.style.display = 'none';
 
       try {
@@ -425,60 +408,20 @@ document.addEventListener('DOMContentLoaded', () => {
           contactForm.reset();
           setTimeout(() => {
             if (formSuccess) formSuccess.style.display = 'none';
-          }, 5000);
+          }, 6000);
         } else {
-          throw new Error('Form submission failed');
+          throw new Error('Server returned non-200 status');
         }
-      } catch (error) {
+      } catch (err) {
         if (formError) formError.style.display = 'block';
         setTimeout(() => {
           if (formError) formError.style.display = 'none';
-        }, 5000);
+        }, 6000);
       } finally {
         if (btnText) btnText.style.display = 'inline';
         if (btnLoading) btnLoading.style.display = 'none';
         if (submitBtn) submitBtn.disabled = false;
       }
-    });
-  }
-
-  /* ----------------------------------------------------------
-     13. Back to Top
-     Smooth-scroll to #hero on click
-  ---------------------------------------------------------- */
-  const backToTop = document.querySelector('.back-to-top');
-
-  if (backToTop) {
-    backToTop.addEventListener('click', (e) => {
-      e.preventDefault();
-      const hero = document.getElementById('hero');
-      if (hero) {
-        hero.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  }
-
-  /* ----------------------------------------------------------
-     14. Dynamic 3D Card Tilt Interaction
-     Adds dynamic 3D perspective tilt on hover across desktop & laptops
-  ---------------------------------------------------------- */
-  if (window.innerWidth > 768 && !prefersReducedMotion) {
-    const tiltCards = document.querySelectorAll('.service-card, .project-card, .skill-item, .creative-item');
-    tiltCards.forEach((card) => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -6;
-        const rotateY = ((x - centerX) / centerX) * 6;
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
-      });
-
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-      });
     });
   }
 });
