@@ -158,7 +158,7 @@
             I take ambiguous data workflows and transform them into resilient data pipelines, analytics engines, and automation tools. Rooted in deep Data Structures & Algorithms (DSA), Python, and SQL, I build software that prioritizes idempotency, query efficiency, and production uptime.
           </p>
           <p class="reveal reveal-delay-2">
-            Whether it's deploying GatherCraft with live AI copilot capabilities, designing H.A.T.S. with 15-scenario portfolio stress grids and immutable SQLite triggers, or performing cybersecurity anomaly detection — I bring structured thinking, clean code, and engineering rigor to every system.
+            Whether it's architecting offline-first restaurant chain POS & cloud sync pipelines with vector clock queues, deploying GatherCraft with live AI copilot capabilities, designing H.A.T.S. with 15-scenario portfolio stress grids, or performing cybersecurity anomaly detection — I bring structured thinking, clean code, and engineering rigor to every system.
           </p>
           
           <div class="about-stats reveal reveal-delay-3">
@@ -266,11 +266,18 @@
       <div class="projects-container">
         <span class="section-label">— Case Studies</span>
         <h2 class="section-title">Engineered Systems & Artifacts</h2>
+
+        <!-- Interactive Category Filter Tabs -->
+        <div class="project-filter-bar reveal">
+          <button class="filter-btn active" data-filter="all">All Systems (5)</button>
+          <button class="filter-btn" data-filter="data-fintech">Data & FinTech (3)</button>
+          <button class="filter-btn" data-filter="distributed-ai">Distributed Systems & AI (2)</button>
+        </div>
         
         <div class="projects-grid">
 
           <!-- Project 1: GatherCraft -->
-          <div class="project-card reveal">
+          <div class="project-card reveal" data-category="distributed-ai">
             <div class="project-visual" style="background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(129, 140, 248, 0.2));">
               <span class="project-brand-badge">GatherCraft 🎉</span>
             </div>
@@ -287,6 +294,10 @@
                 <span class="metric-pill">🪄 Magic Link RSVPs</span>
                 <span class="metric-pill">⚡ Next.js 14 SSR</span>
               </div>
+              <div class="project-arch-flow">
+                <span class="arch-flow-label">Data Pipeline:</span>
+                <code>Next.js 14 → Gemini 1.5 Pro → JSON Schemas → Vercel Edge</code>
+              </div>
               <p class="project-result">
                 A purpose-driven gathering platform that turns ambiguous event concepts into structured timelines with AI refinement, live day-of coordination, and public magic-link RSVPs. I built the full Next.js application, integrated Gemini AI for schedule generation, and created the real-time host copilot workflow.
               </p>
@@ -298,7 +309,7 @@
           </div>
 
           <!-- Project 2: HATS Trading Engine -->
-          <div class="project-card reveal reveal-delay-1">
+          <div class="project-card reveal reveal-delay-1" data-category="data-fintech">
             <div class="project-visual" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(16, 185, 129, 0.2));">
               <span class="project-brand-badge">H.A.T.S. Engine 📈</span>
             </div>
@@ -315,6 +326,10 @@
                 <span class="metric-pill">🔒 SQLite Audit Triggers</span>
                 <span class="metric-pill">⏱️ &lt;50ms OMS Loop</span>
               </div>
+              <div class="project-arch-flow">
+                <span class="arch-flow-label">Data Pipeline:</span>
+                <code>FastAPI Ingress → Alpaca OMS (&lt;50ms) → SQLite Triggers (Audit Log)</code>
+              </div>
               <p class="project-result">
                 A modular quantitative trading framework for automated paper-trading via Alpaca API. I engineered the 15-scenario portfolio stress testing matrix, constructed the FastAPI telemetry server, and implemented database-level SQLite triggers to guarantee an immutable audit ledger on every executed order.
               </p>
@@ -324,8 +339,40 @@
             </div>
           </div>
 
-          <!-- Project 3: Network Intrusion Detection -->
-          <div class="project-card reveal reveal-delay-2">
+          <!-- Project 3: Restaurant Chain Management System -->
+          <div class="project-card reveal reveal-delay-2" data-category="distributed-ai">
+            <div class="project-visual" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(245, 158, 11, 0.2));">
+              <span class="project-brand-badge">Restaurant Chain 🍽️</span>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">Turborepo</span>
+                <span class="project-tag">SQLite WAL</span>
+                <span class="project-tag">AWS PostgreSQL</span>
+                <span class="project-tag">Vector Clock</span>
+              </div>
+              <h3>Restaurant Chain — Edge POS & Sync Engine</h3>
+              <div class="project-metrics">
+                <span class="metric-pill">⚡ 100% Offline Edge Uptime</span>
+                <span class="metric-pill">🔄 Vector Clock Sync</span>
+                <span class="metric-pill">🥩 Recipe BOM Depletion</span>
+              </div>
+              <div class="project-arch-flow">
+                <span class="arch-flow-label">Data Pipeline:</span>
+                <code>POS/KDS PWA → Edge Node (SQLite WAL) → Async Vector Queue → AWS PostgreSQL</code>
+              </div>
+              <p class="project-result">
+                An offline-first, multi-outlet restaurant management platform. Built local edge node servers using embedded SQLite in WAL mode for zero-downtime offline ordering, an asynchronous vector clock sync queue to stream conflict-free events to Cloud PostgreSQL, and a multi-level recipe Bill of Materials (BOM) engine calculating ingredient depletion with yield and wastage loss equations.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/Alokkr00/Restaurant-Chain-management-System" target="_blank" rel="noopener noreferrer" class="btn-project primary">GitHub Repository ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Network Intrusion Detection -->
+          <div class="project-card reveal reveal-delay-1" data-category="data-fintech">
             <div class="project-visual" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(0, 229, 255, 0.2));">
               <span class="project-brand-badge">Security Analytics 🔒</span>
             </div>
@@ -342,6 +389,10 @@
                 <span class="metric-pill">🎯 Threat Anomaly ML</span>
                 <span class="metric-pill">🛡️ Scikit Classifiers</span>
               </div>
+              <div class="project-arch-flow">
+                <span class="arch-flow-label">Data Pipeline:</span>
+                <code>Raw NetFlow Logs → Pandas Vectorization → Scikit-learn Classifiers</code>
+              </div>
               <p class="project-result">
                 An end-to-end data analytics and machine learning classification pipeline detecting malicious network traffic patterns. I preprocessed and engineered multi-dimensional traffic data, trained Scikit-learn anomaly classifiers, and visualized attack distributions for high-accuracy cybersecurity threat scoring.
               </p>
@@ -351,8 +402,8 @@
             </div>
           </div>
 
-          <!-- Project 4: Multi-Platform Content Uploader -->
-          <div class="project-card reveal reveal-delay-3">
+          <!-- Project 5: Multi-Platform Content Uploader -->
+          <div class="project-card reveal reveal-delay-2" data-category="data-fintech">
             <div class="project-visual" style="background: linear-gradient(135deg, rgba(129, 140, 248, 0.2), rgba(245, 158, 11, 0.2));">
               <span class="project-brand-badge">Publish Pipeline 🤖</span>
             </div>
@@ -368,6 +419,10 @@
                 <span class="metric-pill">🔄 Async Job Queues</span>
                 <span class="metric-pill">🛡️ Rate-Limited APIs</span>
                 <span class="metric-pill">⚡ Multi-Channel Sync</span>
+              </div>
+              <div class="project-arch-flow">
+                <span class="arch-flow-label">Data Pipeline:</span>
+                <code>Media Asset Ingest → Async FastAPI Worker → Retry Backoff → REST Endpoints</code>
               </div>
               <p class="project-result">
                 An automated cross-platform video and media asset distribution engine. I built the asynchronous ingestion and publishing pipeline using Python and FastAPI, designed queue-based scheduling with resilient failure retry routines, and integrated multi-service REST APIs with centralized SQLite state persistence.
