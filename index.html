@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Alok Kumar | Data Engineer · Data Analyst · Systems Builder</title>
   <meta name="description" content="Alok Kumar — Data Engineer and Data Analyst building high-throughput data pipelines, algorithmic trading infrastructure, and AI-powered analytical systems." />
   <link rel="canonical" href="https://alokkr00.github.io/Portfolio/" />
@@ -13,19 +13,16 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alokkr00.github.io/Portfolio/" />
   <meta property="og:site_name" content="Alok Kumar — Portfolio" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Alok Kumar | Data Engineer · Data Analyst" />
-  <meta name="twitter:description" content="Data Engineering, Analytics, AI Systems, and Quantitative Trading — Alok Kumar's portfolio." />
+  <meta property="og:image" content="https://alokkr00.github.io/Portfolio/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
@@ -59,10 +56,10 @@
   </div>
 
   <!-- ========== Navigation ========== -->
-  <nav class="navbar" id="navbar">
-    <div class="scroll-progress" id="scroll-progress"></div>
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
     <div class="nav-container">
-      <a href="#" class="nav-logo">Alok<span class="logo-dot">.</span></a>
+      <a href="#hero" class="nav-logo" aria-label="Alok Kumar Home">Alok<span class="logo-dot" aria-hidden="true">.</span></a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Capabilities</a></li>
@@ -71,8 +68,8 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme">
-          <span class="theme-icon">🌙</span>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to light theme" aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
         </button>
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
           <span></span>
@@ -83,39 +80,39 @@
     </div>
   </nav>
 
-  <!-- ========== Hero Section (Pipeline Ingress) ========== -->
-  <section class="hero" id="hero">
-    <div class="hero-canvas-container" aria-hidden="true">
-      <canvas id="hero-canvas"></canvas>
-    </div>
-    <div class="hero-content">
-      <div class="pipeline-status-badge reveal">
-        <span class="status-dot"></span>
-        <span>Pipeline Status: Online · Open to Opportunities</span>
-      </div>
-      
-      <p class="hero-greeting reveal">👋 Hello, I'm</p>
-      <h1 class="hero-name reveal reveal-delay-1">Alok Kumar</h1>
-      
-      <div class="hero-role-wrapper reveal reveal-delay-2">
-        <span class="terminal-prompt">$ alok --role</span>
-        <span class="role-text" id="role-text">Data Engineer</span>
-        <span class="typewriter-cursor">|</span>
-      </div>
-      
-      <p class="hero-description reveal reveal-delay-3">
-        I architect high-throughput data pipelines, quantitative trading frameworks, and AI-powered analytical products — transforming complex datasets into clear, automated decisions.
-      </p>
-      
-      <div class="hero-cta reveal reveal-delay-4">
-        <a href="#projects" class="btn-primary">Explore Projects ↓</a>
-        <a href="AlokResume.pdf" download class="btn-secondary">📄 Download Résumé</a>
-        <a href="#contact" class="btn-secondary">Get in Touch</a>
-      </div>
-    </div>
-  </section>
+  <main id="main-content" tabindex="-1">
 
-  <main id="main-content">
+    <!-- ========== Hero Section (Pipeline Ingress) ========== -->
+    <section class="hero" id="hero">
+      <div class="hero-canvas-container" aria-hidden="true">
+        <canvas id="hero-canvas"></canvas>
+      </div>
+      <div class="hero-content">
+        <div class="pipeline-status-badge reveal" role="status">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Pipeline Status: Online · Open to Opportunities</span>
+        </div>
+        
+        <p class="hero-greeting reveal"><span aria-hidden="true">👋</span> Hello, I'm</p>
+        <h1 class="hero-name reveal reveal-delay-1">Alok Kumar</h1>
+        
+        <div class="hero-role-wrapper reveal reveal-delay-2" aria-label="Role: Data Engineer">
+          <span class="terminal-prompt" aria-hidden="true">$ alok --role</span>
+          <span class="role-text" id="role-text" aria-live="off">Data Engineer</span>
+          <span class="typewriter-cursor" aria-hidden="true">|</span>
+        </div>
+        
+        <p class="hero-description reveal reveal-delay-3">
+          I architect high-throughput data pipelines, quantitative trading frameworks, and AI-powered analytical products — transforming complex datasets into clear, automated decisions.
+        </p>
+        
+        <div class="hero-cta reveal reveal-delay-4">
+          <a href="#projects" class="btn-primary">Explore Projects <span aria-hidden="true">↓</span></a>
+          <a href="AlokResume.pdf" download class="btn-secondary"><span aria-hidden="true">📄</span> Download Résumé</a>
+          <a href="#contact" class="btn-secondary">Get in Touch</a>
+        </div>
+      </div>
+    </section>
 
     <!-- ========== About Section (System Architecture) ========== -->
     <section class="about" id="about">
@@ -124,10 +121,10 @@
         <!-- Left: Telemetry Profile Card -->
         <div class="about-card reveal">
           <div class="about-avatar-wrapper">
-            <div class="about-avatar-icon">📊</div>
+            <div class="about-avatar-icon" aria-hidden="true">📊</div>
             <div class="about-profile-meta">
-              <h3>Alok Kumar</h3>
-              <p>Data Engineer & Analyst</p>
+              <p class="about-profile-name">Alok Kumar</p>
+              <p class="about-profile-role">Data Engineer & Analyst</p>
             </div>
           </div>
           <div class="about-spec-list">
@@ -268,13 +265,14 @@
         <h2 class="section-title">Engineered Systems & Artifacts</h2>
 
         <!-- Interactive Category Filter Tabs -->
-        <div class="project-filter-bar reveal">
-          <button class="filter-btn active" data-filter="all">All Systems (5)</button>
-          <button class="filter-btn" data-filter="data-fintech">Data & FinTech (3)</button>
-          <button class="filter-btn" data-filter="distributed-ai">Distributed Systems & AI (2)</button>
+        <div class="project-filter-bar reveal" role="tablist" aria-label="Project filter categories">
+          <button class="filter-btn active" role="tab" aria-selected="true" aria-controls="projects-grid" id="tab-all" data-filter="all">All Systems (5)</button>
+          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="projects-grid" id="tab-fintech" data-filter="data-fintech">Data & FinTech (3)</button>
+          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="projects-grid" id="tab-ai" data-filter="distributed-ai">Distributed Systems & AI (2)</button>
         </div>
+        <div id="filter-status-announcer" class="sr-only" aria-live="polite">Showing all 5 projects</div>
         
-        <div class="projects-grid">
+        <div class="projects-grid" id="projects-grid">
 
           <!-- Project 1: GatherCraft -->
           <div class="project-card reveal" data-category="distributed-ai">
@@ -523,54 +521,56 @@
             </p>
             
             <div class="contact-channels-list">
-              <div class="contact-channel-card">
-                <div class="channel-icon">📧</div>
+              <a href="mailto:kishorealok99@gmail.com" class="contact-channel-card" aria-label="Send direct email to kishorealok99@gmail.com">
+                <div class="channel-icon" aria-hidden="true">📧</div>
                 <div class="channel-meta">
                   <strong>Direct Email</strong>
-                  <a href="mailto:kishorealok99@gmail.com">kishorealok99@gmail.com</a>
+                  <span>kishorealok99@gmail.com</span>
                 </div>
-              </div>
+              </a>
 
-              <div class="contact-channel-card">
-                <div class="channel-icon">🐙</div>
+              <a href="https://github.com/Alokkr00" target="_blank" rel="noopener noreferrer" class="contact-channel-card" aria-label="GitHub Profile (opens in new tab)">
+                <div class="channel-icon" aria-hidden="true">🐙</div>
                 <div class="channel-meta">
                   <strong>GitHub Profile</strong>
-                  <a href="https://github.com/Alokkr00" target="_blank" rel="noopener noreferrer">github.com/Alokkr00</a>
+                  <span>github.com/Alokkr00 ↗</span>
                 </div>
-              </div>
+              </a>
 
-              <div class="contact-channel-card">
-                <div class="channel-icon">💼</div>
+              <a href="https://www.linkedin.com/in/alok-kumar-18914b176/" target="_blank" rel="noopener noreferrer" class="contact-channel-card" aria-label="LinkedIn Network (opens in new tab)">
+                <div class="channel-icon" aria-hidden="true">💼</div>
                 <div class="channel-meta">
                   <strong>LinkedIn Network</strong>
-                  <a href="https://www.linkedin.com/in/alok-kumar-18914b176/" target="_blank" rel="noopener noreferrer">in/alok-kumar-18914b176</a>
+                  <span>in/alok-kumar-18914b176 ↗</span>
                 </div>
-              </div>
+              </a>
 
-              <div class="contact-channel-card">
-                <div class="channel-icon">📄</div>
+              <a href="AlokResume.pdf" download class="contact-channel-card" aria-label="Download PDF Résumé">
+                <div class="channel-icon" aria-hidden="true">📄</div>
                 <div class="channel-meta">
                   <strong>PDF Résumé</strong>
-                  <a href="AlokResume.pdf" download>Download AlokResume.pdf</a>
+                  <span>Download AlokResume.pdf</span>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
           <!-- Right Form Column -->
           <div class="contact-form-wrapper reveal">
-            <form class="contact-form" id="contact-form" action="https://formspree.io/f/mljrnrpe" method="POST">
+            <form class="contact-form" id="contact-form" action="https://formspree.io/f/mljrnrpe" method="POST" novalidate>
               <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="Alex Rivera" autocomplete="name" required />
+                <label for="name">Your Name <span class="required-star" aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Alex Rivera" autocomplete="name" required aria-required="true" aria-describedby="name-error" />
+                <span class="field-error-msg" id="name-error" role="alert"></span>
               </div>
               <div class="form-group">
-                <label for="email">Your Email Address</label>
-                <input type="email" id="email" name="email" placeholder="alex@company.com" autocomplete="email" required />
+                <label for="email">Your Email Address <span class="required-star" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" placeholder="alex@company.com" autocomplete="email" required aria-required="true" aria-describedby="email-error" />
+                <span class="field-error-msg" id="email-error" role="alert"></span>
               </div>
               <div class="form-group">
-                <label for="subject">Project Focus / Inquiry</label>
-                <select id="subject" name="subject" required>
+                <label for="subject">Project Focus / Inquiry <span class="required-star" aria-hidden="true">*</span></label>
+                <select id="subject" name="subject" required aria-required="true" aria-describedby="subject-error">
                   <option value="" disabled selected>Select project focus</option>
                   <option value="data-engineering">Data Pipelines & ETL Architecture</option>
                   <option value="data-analysis">Data Analysis & Predictive Modeling</option>
@@ -579,17 +579,23 @@
                   <option value="fulltime-opportunity">Full-Time / Contract Role</option>
                   <option value="other">Other Collaboration</option>
                 </select>
+                <span class="field-error-msg" id="subject-error" role="alert"></span>
               </div>
               <div class="form-group">
-                <label for="message">Project Scope / Details</label>
-                <textarea id="message" name="message" rows="5" placeholder="Tell me about your dataset, project goals, or opportunity..." required></textarea>
+                <label for="message">Project Scope / Details <span class="required-star" aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your dataset, project goals, or opportunity..." required aria-required="true" aria-describedby="message-error"></textarea>
+                <span class="field-error-msg" id="message-error" role="alert"></span>
               </div>
               <button type="submit" class="btn-submit" id="btn-submit">
                 <span class="btn-text">Transmit Message →</span>
-                <span class="btn-loading" style="display:none;">Transmitting...</span>
+                <span class="btn-loading" style="display:none;" aria-hidden="true">
+                  <span class="spinner" aria-hidden="true"></span> Transmitting...
+                </span>
               </button>
-              <p class="form-success" id="form-success" style="display:none;" role="status" aria-live="polite">✅ Message transmitted successfully! I'll get back to you promptly.</p>
-              <p class="form-error" id="form-error" style="display:none;" role="alert" aria-live="assertive">❌ Submission error. Please retry or contact kishorealok99@gmail.com directly.</p>
+              <div class="form-alert-container">
+                <p class="form-success" id="form-success" role="status" aria-live="polite" hidden>✅ Message transmitted successfully! I'll get back to you promptly.</p>
+                <p class="form-error" id="form-error" role="alert" aria-live="assertive" hidden>❌ Submission error. Please retry or contact kishorealok99@gmail.com directly.</p>
+              </div>
               <p class="form-privacy">🔒 Encrypted via Formspree SSL. Your information is strictly confidential.</p>
             </form>
           </div>
