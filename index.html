@@ -155,7 +155,7 @@
             I take ambiguous data workflows and transform them into resilient data pipelines, analytics engines, and automation tools. Rooted in deep Data Structures & Algorithms (DSA), Python, and SQL, I build software that prioritizes idempotency, query efficiency, and production uptime.
           </p>
           <p class="reveal reveal-delay-2">
-            Whether it's architecting offline-first restaurant chain POS & cloud sync pipelines with vector clock queues, deploying GatherCraft with live AI copilot capabilities, designing H.A.T.S. with 15-scenario portfolio stress grids, or performing cybersecurity anomaly detection — I bring structured thinking, clean code, and engineering rigor to every system.
+            Whether it's building enterprise customer churn MLOps pipelines with dbt and Apache Airflow, architecting offline-first restaurant chain POS & cloud sync pipelines with vector clock queues, deploying GatherCraft with live AI copilot capabilities, designing H.A.T.S. with 15-scenario portfolio stress grids, or competing in the IIT Guwahati Data Analytics Hackathon — I bring structured thinking, clean code, and engineering rigor to every system.
           </p>
           
           <div class="about-stats reveal reveal-delay-3">
@@ -168,7 +168,7 @@
               <span class="stat-label">Stress Scenarios</span>
             </div>
             <div class="stat-card">
-              <span class="stat-number" data-target="28">0</span><span class="stat-suffix">+</span>
+              <span class="stat-number" data-target="31">0</span><span class="stat-suffix">+</span>
               <span class="stat-label">Public Repositories</span>
             </div>
           </div>
@@ -177,7 +177,7 @@
             <a href="AlokResume.pdf" download class="btn-resume">📄 Download Complete Résumé</a>
             <a href="https://github.com/Alokkr00" target="_blank" rel="noopener noreferrer" class="about-github-pill">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              <span>28 Repositories on GitHub ↗</span>
+              <span>31 Repositories on GitHub ↗</span>
             </a>
           </div>
         </div>
@@ -266,11 +266,11 @@
 
         <!-- Interactive Category Filter Tabs -->
         <div class="project-filter-bar reveal" role="tablist" aria-label="Project filter categories">
-          <button class="filter-btn active" role="tab" aria-selected="true" aria-controls="projects-grid" id="tab-all" data-filter="all">All Systems (5)</button>
-          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="projects-grid" id="tab-fintech" data-filter="data-fintech">Data & FinTech (3)</button>
+          <button class="filter-btn active" role="tab" aria-selected="true" aria-controls="projects-grid" id="tab-all" data-filter="all">All Systems (6)</button>
+          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="projects-grid" id="tab-fintech" data-filter="data-fintech">Data & FinTech (4)</button>
           <button class="filter-btn" role="tab" aria-selected="false" aria-controls="projects-grid" id="tab-ai" data-filter="distributed-ai">Distributed Systems & AI (2)</button>
         </div>
-        <div id="filter-status-announcer" class="sr-only" aria-live="polite">Showing all 5 projects</div>
+        <div id="filter-status-announcer" class="sr-only" aria-live="polite">Showing all 6 projects</div>
         
         <div class="projects-grid" id="projects-grid">
 
@@ -306,8 +306,42 @@
             </div>
           </div>
 
-          <!-- Project 2: HATS Trading Engine -->
+          <!-- Project 2: Customer Churn MLOps Pipeline -->
           <div class="project-card reveal reveal-delay-1" data-category="data-fintech">
+            <div class="project-visual" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(0, 229, 255, 0.2));">
+              <span class="project-brand-badge">Churn MLOps 🔄</span>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">Python 3.11</span>
+                <span class="project-tag">Apache Airflow</span>
+                <span class="project-tag">dbt-core</span>
+                <span class="project-tag">MLflow</span>
+                <span class="project-tag">LightGBM</span>
+                <span class="project-tag">FastAPI</span>
+                <span class="project-tag">Streamlit</span>
+              </div>
+              <h3>Customer Churn & Retention MLOps Pipeline</h3>
+              <div class="project-metrics">
+                <span class="metric-pill">⚡ Sub-30ms Inference</span>
+                <span class="metric-pill">🛡️ ΔAUC ≥ 0.01 & PSI Gate</span>
+                <span class="metric-pill">🔄 Automated dbt Marts</span>
+              </div>
+              <div class="project-arch-flow">
+                <span class="arch-flow-label">Data Pipeline:</span>
+                <code>PostgreSQL → dbt Marts → LightGBM / MLflow → Airflow Daily DAG → FastAPI & Streamlit</code>
+              </div>
+              <p class="project-result">
+                A production-grade, closed-loop MLOps and Data Engineering system predicting subscription customer churn with explainable risk drivers. Engineered modular dbt transformations across staging/marts layers, automated model governance with code-enforced promotion gates (&Delta;AUC &ge; +0.01 &amp; PSI &le; 0.10), Apache Airflow DAG batch scoring, sub-30ms FastAPI inference, and an interactive Streamlit retention simulator.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/Alokkr00/Customer-Churn-Pipeline" target="_blank" rel="noopener noreferrer" class="btn-project primary">GitHub Repository ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: HATS Trading Engine -->
+          <div class="project-card reveal reveal-delay-2" data-category="data-fintech">
             <div class="project-visual" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(16, 185, 129, 0.2));">
               <span class="project-brand-badge">H.A.T.S. Engine 📈</span>
             </div>
@@ -450,7 +484,7 @@
               <h3>Core & Languages</h3>
             </div>
             <div class="skill-pills-wrap">
-              <span class="skill-pill">🐍 Python 3.11</span>
+              <span class="skill-pill">🐍 Python 3.11 / 3.12</span>
               <span class="skill-pill">🗃️ SQL / PL-SQL</span>
               <span class="skill-pill">💙 TypeScript</span>
               <span class="skill-pill">💻 Bash Scripting</span>
@@ -467,9 +501,10 @@
             <div class="skill-pills-wrap">
               <span class="skill-pill">📊 Pandas / NumPy</span>
               <span class="skill-pill">🐘 PostgreSQL</span>
-              <span class="skill-pill">💾 SQLite</span>
-              <span class="skill-pill">🔄 ETL Pipelines</span>
-              <span class="skill-pill">📐 Schema Design</span>
+              <span class="skill-pill">🛠️ dbt-core 1.7</span>
+              <span class="skill-pill">🌪️ Apache Airflow 2.8</span>
+              <span class="skill-pill">💾 SQLite / MinIO</span>
+              <span class="skill-pill">🔄 ETL & Feature Marts</span>
             </div>
           </div>
 
@@ -481,10 +516,11 @@
             </div>
             <div class="skill-pills-wrap">
               <span class="skill-pill">✨ Gemini API</span>
-              <span class="skill-pill">🧠 Scikit-learn</span>
-              <span class="skill-pill">📈 Power BI</span>
-              <span class="skill-pill">📉 Tableau</span>
+              <span class="skill-pill">🧠 Scikit-learn & LightGBM</span>
+              <span class="skill-pill">🔬 MLflow Tracking</span>
+              <span class="skill-pill">📈 Power BI & Tableau</span>
               <span class="skill-pill">📓 Jupyter Notebooks</span>
+              <span class="skill-pill">👁️ Keras / TensorFlow</span>
             </div>
           </div>
 
@@ -495,11 +531,12 @@
               <h3>Backend & Cloud</h3>
             </div>
             <div class="skill-pills-wrap">
-              <span class="skill-pill">🚀 FastAPI</span>
+              <span class="skill-pill">🚀 FastAPI & Django 4.2</span>
               <span class="skill-pill">⚛️ Next.js 14</span>
-              <span class="skill-pill">🔀 Git / GitHub</span>
-              <span class="skill-pill">🌐 RESTful APIs</span>
-              <span class="skill-pill">▲ Vercel Cloud</span>
+              <span class="skill-pill">🐳 Docker Compose</span>
+              <span class="skill-pill">🏗️ Terraform (IaC)</span>
+              <span class="skill-pill">🎈 Streamlit Hub</span>
+              <span class="skill-pill">🔀 GitHub Actions CI</span>
             </div>
           </div>
 
