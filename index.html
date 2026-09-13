@@ -114,7 +114,7 @@
           <span class="telemetry-separator" aria-hidden="true">·</span>
           <div class="telemetry-pill">
             <span class="telemetry-icon" aria-hidden="true">🎓</span>
-            <span><strong>Education:</strong> B.Tech in Computer Science</span>
+            <span><strong>Education:</strong> [DEGREE + YEAR — PLACEHOLDER]</span>
           </div>
           <span class="telemetry-separator" aria-hidden="true">·</span>
           <div class="telemetry-pill">
@@ -135,6 +135,17 @@
         </div>
       </div>
     </section>
+
+    <!-- ========== Availability Strip (Task D) ========== -->
+    <div class="availability-strip reveal" role="region" aria-label="Candidate availability and location">
+      <div class="availability-strip-inner">
+        <span class="avail-item"><span class="avail-icon" aria-hidden="true">📍</span> Based in India (IST)</span>
+        <span class="avail-divider" aria-hidden="true">·</span>
+        <span class="avail-item"><span class="avail-icon" aria-hidden="true">🎓</span> [DEGREE + YEAR — PLACEHOLDER]</span>
+        <span class="avail-divider" aria-hidden="true">·</span>
+        <span class="avail-item"><span class="avail-icon" aria-hidden="true">💼</span> Open to Remote Full-Time &amp; Contract Data Roles</span>
+      </div>
+    </div>
 
     <!-- ========== About Section (System Architecture) ========== -->
     <section class="about" id="about">
@@ -177,20 +188,20 @@
             I take ambiguous data workflows and transform them into resilient data pipelines, analytics engines, and automation tools. Rooted in deep Data Structures & Algorithms (DSA), Python, and SQL, I build software that prioritizes idempotency, query efficiency, and production uptime.
           </p>
           <p class="reveal reveal-delay-2">
-            Whether it's building enterprise customer churn MLOps pipelines with dbt and Apache Airflow, architecting offline-first restaurant chain POS & cloud sync pipelines with vector clock queues, deploying GatherCraft with live AI copilot capabilities, designing H.A.T.S. with 15-scenario portfolio stress grids, or competing in the IIT Guwahati Data Analytics Hackathon — I bring structured thinking, clean code, and engineering rigor to every system.
+            Whether it's building enterprise customer churn MLOps pipelines with dbt and Apache Airflow, architecting offline-first restaurant chain POS & cloud sync pipelines with vector clock queues, deploying GatherCraft with live AI copilot capabilities, designing H.A.T.S. with 15-scenario portfolio stress grids, or competing in the <a href="https://github.com/Alokkr00/Hackathon" target="_blank" rel="noopener noreferrer" class="text-link">IIT Guwahati Data Analytics Hackathon</a> — I bring structured thinking, clean code, and engineering rigor to every system.
           </p>
           
           <div class="about-stats reveal reveal-delay-3">
             <div class="stat-card">
-              <span class="stat-number" data-target="7">0</span><span class="stat-suffix">+</span>
-              <span class="stat-label">Production Systems</span>
+              <span class="stat-number" data-target="8">0</span>
+              <span class="stat-label">Flagship Systems</span>
             </div>
             <div class="stat-card">
               <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
               <span class="stat-label">Stress Scenarios</span>
             </div>
             <div class="stat-card">
-              <span class="stat-number" data-target="31">0</span><span class="stat-suffix">+</span>
+              <span class="stat-number" data-target="31">0</span>
               <span class="stat-label">Public Repositories</span>
             </div>
           </div>
@@ -228,7 +239,7 @@
               <h3>Data Pipelines & ETL Architecture</h3>
               <p>Designing high-reliability ingestion streams, automated cleaning pipelines, and structured relational schemas using Python, SQL, and Pandas. Transforming raw data streams into analytics-ready models.</p>
             </div>
-            <a href="https://github.com/Alokkr00/Customer-Churn-Pipeline" target="_blank" rel="noopener noreferrer" class="service-link">View MLOps Pipeline <span>&rarr;</span></a>
+            <a href="#projects" class="service-link">Explore Implementations <span>&rarr;</span></a>
           </div>
 
           <!-- Discipline 2: Quant & FinTech Systems -->
@@ -257,7 +268,7 @@
               <h3>AI Pipelines & Agentic Workflows</h3>
               <p>Integrating state-of-the-art LLMs (Gemini API, Claude, GPT) with structured JSON schemas, function-calling workflows, and RAG architectures for real-time automation.</p>
             </div>
-            <a href="https://gather-craft.vercel.app" target="_blank" rel="noopener noreferrer" class="service-link">Launch GatherCraft AI Copilot <span>&rarr;</span></a>
+            <a href="https://github.com/Alokkr00/GatherCraft" target="_blank" rel="noopener noreferrer" class="service-link">View GatherCraft Architecture <span>&rarr;</span></a>
           </div>
 
           <!-- Discipline 4: Data Analytics & Dashboards -->
@@ -288,48 +299,16 @@
 
         <!-- Interactive Category Filter Tabs -->
         <div class="project-filter-bar reveal" role="tablist" aria-label="Project filter categories">
-          <button class="filter-btn active" role="tab" aria-selected="true" aria-controls="projects-grid" id="tab-all" data-filter="all">All Systems (7)</button>
-          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="projects-grid" id="tab-fintech" data-filter="data-fintech">Data &amp; Analytics (4)</button>
+          <button class="filter-btn active" role="tab" aria-selected="true" aria-controls="projects-grid" id="tab-all" data-filter="all">All Systems (8)</button>
+          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="projects-grid" id="tab-fintech" data-filter="data-fintech">Data &amp; FinTech (5)</button>
           <button class="filter-btn" role="tab" aria-selected="false" aria-controls="projects-grid" id="tab-ai" data-filter="distributed-ai">Distributed Systems &amp; AI (3)</button>
         </div>
-        <div id="filter-status-announcer" class="sr-only" aria-live="polite">Showing all 7 projects</div>
+        <div id="filter-status-announcer" class="sr-only" aria-live="polite">Showing all 8 projects</div>
         
         <div class="projects-grid" id="projects-grid">
 
-          <!-- Project 1: GatherCraft -->
-          <div class="project-card reveal" data-category="distributed-ai">
-            <div class="project-visual" style="background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(129, 140, 248, 0.2));">
-              <span class="project-brand-badge">GatherCraft 🎉</span>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span class="project-tag">Next.js 14</span>
-                <span class="project-tag">Gemini API</span>
-                <span class="project-tag">TypeScript</span>
-                <span class="project-tag">AI Copilot</span>
-              </div>
-              <h3>GatherCraft — AI-Powered Event Engine</h3>
-              <div class="project-metrics">
-                <span class="metric-pill">🤖 AI Context Engine</span>
-                <span class="metric-pill">🪄 Magic Link RSVPs</span>
-                <span class="metric-pill">⚡ Next.js 14 SSR</span>
-              </div>
-              <div class="project-arch-flow">
-                <span class="arch-flow-label">Data Pipeline:</span>
-                <code>Next.js 14 → Gemini 1.5 Pro → JSON Schemas → Vercel Edge</code>
-              </div>
-              <p class="project-result">
-                A purpose-driven gathering platform that turns ambiguous event concepts into structured timelines with AI refinement, live day-of coordination, and public magic-link RSVPs. I built the full Next.js application, integrated Gemini AI for schedule generation, and created the real-time host copilot workflow.
-              </p>
-              <div class="project-actions">
-                <a href="https://gather-craft.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-project primary">Live Demo ↗</a>
-                <a href="https://github.com/Alokkr00/GatherCraft" target="_blank" rel="noopener noreferrer" class="btn-project">GitHub Repo ↗</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2: Customer Churn MLOps Pipeline -->
-          <div class="project-card reveal reveal-delay-1" data-category="data-fintech">
+          <!-- Card 1: Customer Churn MLOps Pipeline -->
+          <div class="project-card reveal" data-category="data-fintech">
             <div class="project-visual" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(0, 229, 255, 0.2));">
               <span class="project-brand-badge">Churn MLOps 🔄</span>
             </div>
@@ -343,15 +322,15 @@
                 <span class="project-tag">FastAPI</span>
                 <span class="project-tag">Streamlit</span>
               </div>
-              <h3>Customer Churn & Retention MLOps Pipeline</h3>
+              <h3>Customer Churn &amp; Retention MLOps Pipeline</h3>
               <div class="project-metrics">
                 <span class="metric-pill">⚡ Sub-30ms Inference</span>
-                <span class="metric-pill">🛡️ ΔAUC ≥ 0.01 & PSI Gate</span>
+                <span class="metric-pill">🛡️ ΔAUC ≥ 0.01 &amp; PSI Gate</span>
                 <span class="metric-pill">🔄 Automated dbt Marts</span>
               </div>
               <div class="project-arch-flow">
                 <span class="arch-flow-label">Data Pipeline:</span>
-                <code>PostgreSQL → dbt Marts → LightGBM / MLflow → Airflow Daily DAG → FastAPI & Streamlit</code>
+                <code>PostgreSQL → dbt Marts → LightGBM / MLflow → Airflow Daily DAG → FastAPI &amp; Streamlit</code>
               </div>
               <p class="project-result">
                 A production-grade, closed-loop MLOps and Data Engineering system predicting subscription customer churn with explainable risk drivers. Engineered modular dbt transformations across staging/marts layers, automated model governance with code-enforced promotion gates (&Delta;AUC &ge; +0.01 &amp; PSI &le; 0.10), Apache Airflow DAG batch scoring, sub-30ms FastAPI inference, and an interactive Streamlit retention simulator.
@@ -362,8 +341,8 @@
             </div>
           </div>
 
-          <!-- Project 3: HATS Trading Engine -->
-          <div class="project-card reveal reveal-delay-2" data-category="data-fintech">
+          <!-- Card 2: HATS Trading Engine -->
+          <div class="project-card reveal reveal-delay-1" data-category="data-fintech">
             <div class="project-visual" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(16, 185, 129, 0.2));">
               <span class="project-brand-badge">H.A.T.S. Engine 📈</span>
             </div>
@@ -373,27 +352,30 @@
                 <span class="project-tag">FastAPI</span>
                 <span class="project-tag">Alpaca API</span>
                 <span class="project-tag">SQLite Triggers</span>
+                <span class="project-tag">NumPy</span>
+                <span class="project-tag">Pandas</span>
               </div>
               <h3>H.A.T.S. — Quantitative Trading Engine</h3>
               <div class="project-metrics">
-                <span class="metric-pill">⚡ 15 Stress Scenarios</span>
-                <span class="metric-pill">🔒 SQLite Audit Triggers</span>
-                <span class="metric-pill">⏱️ &lt;50ms OMS Loop</span>
+                <span class="metric-pill">🧪 198 Tests Passing</span>
+                <span class="metric-pill">⚡ 5 Quant Strategies + VaR</span>
+                <span class="metric-pill">🔒 15 Stress Scenarios</span>
               </div>
               <div class="project-arch-flow">
                 <span class="arch-flow-label">Data Pipeline:</span>
-                <code>FastAPI Ingress → Alpaca OMS (&lt;50ms) → SQLite Triggers (Audit Log)</code>
+                <code>FastAPI Ingress → Alpaca OMS (&lt;50ms) → SQLite Triggers (Audit Log) → Risk Engine (VaR)</code>
               </div>
               <p class="project-result">
-                A modular quantitative trading framework for automated paper-trading via Alpaca API. I engineered the 15-scenario portfolio stress testing matrix, constructed the FastAPI telemetry server, and implemented database-level SQLite triggers to guarantee an immutable audit ledger on every executed order.
+                A modular quantitative trading framework for automated paper-trading via Alpaca API. Engineered 5 quantitative strategies, a Value-at-Risk (VaR) risk management engine, and a 15-scenario portfolio stress testing matrix backed by 198 passing unit tests and database-level SQLite triggers for immutable order auditing.
               </p>
               <div class="project-actions">
-                <a href="https://github.com/Alokkr00/HATS-Trading-Engine" target="_blank" rel="noopener noreferrer" class="btn-project primary">GitHub Repository ↗</a>
+                <a href="https://hats-ae7x.onrender.com" target="_blank" rel="noopener noreferrer" class="btn-project primary">Live Dashboard ↗</a>
+                <a href="https://github.com/Alokkr00/HATS-Trading-Engine" target="_blank" rel="noopener noreferrer" class="btn-project">GitHub Repository ↗</a>
               </div>
             </div>
           </div>
 
-          <!-- Project 3: Restaurant Chain Management System -->
+          <!-- Card 3: Restaurant Chain Management System -->
           <div class="project-card reveal reveal-delay-2" data-category="distributed-ai">
             <div class="project-visual" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(245, 158, 11, 0.2));">
               <span class="project-brand-badge">Restaurant Chain 🍽️</span>
@@ -406,7 +388,7 @@
                 <span class="project-tag">AWS PostgreSQL</span>
                 <span class="project-tag">Vector Clock</span>
               </div>
-              <h3>Restaurant Chain — Edge POS & Sync Engine</h3>
+              <h3>Restaurant Chain — Edge POS &amp; Sync Engine</h3>
               <div class="project-metrics">
                 <span class="metric-pill">⚡ 100% Offline Edge Uptime</span>
                 <span class="metric-pill">🔄 Vector Clock Sync</span>
@@ -425,30 +407,97 @@
             </div>
           </div>
 
-          <!-- Project 4: Network Intrusion Detection -->
-          <div class="project-card reveal reveal-delay-1" data-category="data-fintech">
+          <!-- Card 4: Student Management System -->
+          <div class="project-card reveal" data-category="distributed-ai">
+            <div class="project-visual" style="background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(6, 182, 212, 0.2));">
+              <span class="project-brand-badge">Academic ERP 🎓</span>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Django 4.2 LTS</span>
+                <span class="project-tag">SQLite</span>
+                <span class="project-tag">Bootstrap 5</span>
+                <span class="project-tag">RBAC</span>
+              </div>
+              <h3>Enterprise Student Management &amp; Academic ERP</h3>
+              <div class="project-metrics">
+                <span class="metric-pill">🛡️ 3-Tier RBAC</span>
+                <span class="metric-pill">📊 CGPA Engine</span>
+                <span class="metric-pill">✅ 23/23 Tests Passing</span>
+              </div>
+              <div class="project-arch-flow">
+                <span class="arch-flow-label">Data Pipeline:</span>
+                <code>Django Views → RBAC Guards → SQLite → CGPA Engine → Marksheet UI</code>
+              </div>
+              <p class="project-result">
+                A comprehensive academic management system engineered with Django 4.2 LTS. Implements strict 3-tier Role-Based Access Control (Admin, Faculty, Student) protecting sensitive academic records, an automated CGPA grading engine calculating semester and cumulative metrics, and an end-to-end suite of 23 unit tests verifying authorization and report generation.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/Alokkr00/Student-management-system" target="_blank" rel="noopener noreferrer" class="btn-project primary">GitHub Repository ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: GatherCraft -->
+          <div class="project-card reveal reveal-delay-1" data-category="distributed-ai">
+            <div class="project-visual" style="background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(129, 140, 248, 0.2));">
+              <span class="project-brand-badge">GatherCraft 🎉</span>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">Next.js 14</span>
+                <span class="project-tag">Gemini 1.5 Pro</span>
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">PostgreSQL (Neon)</span>
+                <span class="project-tag">JSON Schemas</span>
+              </div>
+              <h3>GatherCraft — AI-Powered Event Engine</h3>
+              <div class="project-metrics">
+                <span class="metric-pill">🤖 Gemini 1.5 Pro</span>
+                <span class="metric-pill">📋 Validated JSON Schema</span>
+                <span class="metric-pill">🪄 Magic-Link RSVPs</span>
+              </div>
+              <div class="project-arch-flow">
+                <span class="arch-flow-label">Data Pipeline:</span>
+                <code>Next.js 14 → Gemini 1.5 Pro → validated JSON Schemas → Neon Postgres</code>
+              </div>
+              <p class="project-result">
+                An AI-powered event engine with a structured data pipeline: Next.js 14 → Gemini 1.5 Pro → validated JSON Schemas → Neon Postgres. Turns ambiguous event ideas into structured timelines with a live host copilot and public magic-link RSVPs.
+              </p>
+              <div class="project-actions">
+                <a href="https://gather-craft.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-project primary">Live Demo ↗</a>
+                <a href="https://github.com/Alokkr00/GatherCraft" target="_blank" rel="noopener noreferrer" class="btn-project">GitHub Repo ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Network Intrusion Detection -->
+          <div class="project-card reveal reveal-delay-2" data-category="data-fintech">
             <div class="project-visual" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(0, 229, 255, 0.2));">
               <span class="project-brand-badge">Security Analytics 🔒</span>
             </div>
             <div class="project-info">
               <div class="project-tags">
                 <span class="project-tag">Python</span>
-                <span class="project-tag">Pandas</span>
                 <span class="project-tag">Scikit-learn</span>
-                <span class="project-tag">Jupyter</span>
+                <span class="project-tag">Express.js</span>
+                <span class="project-tag">EJS</span>
+                <span class="project-tag">Pandas</span>
+                <span class="project-tag">MITRE ATT&CK</span>
               </div>
-              <h3>Network Intrusion Detection & Analysis</h3>
+              <h3>Network Intrusion Detection &amp; Analysis</h3>
               <div class="project-metrics">
-                <span class="metric-pill">📊 Multi-Variate EDA</span>
                 <span class="metric-pill">🎯 Threat Anomaly ML</span>
-                <span class="metric-pill">🛡️ Scikit Classifiers</span>
+                <span class="metric-pill">🖥️ Express + EJS Dashboard</span>
+                <span class="metric-pill">🛡️ MITRE Playbooks</span>
               </div>
               <div class="project-arch-flow">
                 <span class="arch-flow-label">Data Pipeline:</span>
-                <code>Raw NetFlow Logs → Pandas Vectorization → Scikit-learn Classifiers</code>
+                <code>Raw NetFlow Logs → Pandas Vectorization → Scikit-learn Classifiers → Express/EJS UI</code>
               </div>
               <p class="project-result">
-                An end-to-end data analytics and machine learning classification pipeline detecting malicious network traffic patterns. I preprocessed and engineered multi-dimensional traffic data, trained Scikit-learn anomaly classifiers, and visualized attack distributions for high-accuracy cybersecurity threat scoring.
+                Full-stack build with an Express + EJS dashboard and MITRE ATT&CK-aligned containment playbooks. Combines multivariate telemetry preprocessing and Scikit-learn threat classification with interactive analyst triage dashboards.
               </p>
               <div class="project-actions">
                 <a href="https://github.com/Alokkr00/network-intrusion-detection-analysis" target="_blank" rel="noopener noreferrer" class="btn-project primary">GitHub Repository ↗</a>
@@ -456,39 +505,8 @@
             </div>
           </div>
 
-          <!-- Project 6: Multi-Platform Content Uploader -->
-          <div class="project-card reveal reveal-delay-2" data-category="distributed-ai">
-            <div class="project-visual" style="background: linear-gradient(135deg, rgba(129, 140, 248, 0.2), rgba(245, 158, 11, 0.2));">
-              <span class="project-brand-badge">Publish Pipeline 🤖</span>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">FastAPI</span>
-                <span class="project-tag">REST APIs</span>
-                <span class="project-tag">Automation</span>
-              </div>
-              <h3>Multi-Platform Content Automation Pipeline</h3>
-              <div class="project-metrics">
-                <span class="metric-pill">🔄 Async Job Queues</span>
-                <span class="metric-pill">🛡️ Rate-Limited APIs</span>
-                <span class="metric-pill">⚡ Multi-Channel Sync</span>
-              </div>
-              <div class="project-arch-flow">
-                <span class="arch-flow-label">Data Pipeline:</span>
-                <code>Media Asset Ingest → Async FastAPI Worker → Retry Backoff → REST Endpoints</code>
-              </div>
-              <p class="project-result">
-                An automated cross-platform video and media asset distribution engine. I built the asynchronous ingestion and publishing pipeline using Python and FastAPI, designed queue-based scheduling with resilient failure retry routines, and integrated multi-service REST APIs with centralized SQLite state persistence.
-              </p>
-              <div class="project-actions">
-                <a href="https://github.com/Alokkr00/Multi_platform_content_uploader" target="_blank" rel="noopener noreferrer" class="btn-project primary">GitHub Repository ↗</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 7: Madhav E-Commerce Store Retail BI -->
-          <div class="project-card reveal reveal-delay-3" data-category="data-fintech">
+          <!-- Card 7: Madhav Retail BI Dashboard -->
+          <div class="project-card reveal" data-category="data-fintech">
             <div class="project-visual" style="background: linear-gradient(135deg, rgba(242, 200, 17, 0.2), rgba(16, 185, 129, 0.2));">
               <span class="project-brand-badge">Retail BI 📊</span>
             </div>
@@ -502,19 +520,51 @@
               </div>
               <h3>Madhav E-Commerce — Retail Analytics &amp; Profitability Intelligence</h3>
               <div class="project-metrics">
-                <span class="metric-pill">📈 Star-Schema 1:N Model</span>
-                <span class="metric-pill">🗺️ Multi-State Geospatial</span>
-                <span class="metric-pill">💡 Dynamic AOV &amp; Margin %</span>
+                <span class="metric-pill">🗺️ Geospatial Sales</span>
+                <span class="metric-pill">📉 Margin Analysis</span>
+                <span class="metric-pill">💳 Payment Insights</span>
               </div>
               <div class="project-arch-flow">
                 <span class="arch-flow-label">Data Pipeline:</span>
-                <code>Orders &amp; Details CSVs → Power Query ETL → Star-Schema Dimensions → DAX KPIs → Executive Visuals</code>
+                <code>Orders.csv + Details.csv → Power Query → Star Schema → DAX Measures → Power BI Dashboard</code>
               </div>
               <p class="project-result">
-                An end-to-end retail business intelligence dashboard modeling multi-state Indian commercial operations. Engineered a star-schema relational model connecting customer order transactions to line-item product facts, authored custom DAX measures for profit margin and average order value (AOV), and analyzed regional concentration and category margin dilution across Indian metropolitan clusters.
+                An end-to-end retail business intelligence dashboard modeling multi-state Indian commercial operations. Engineered a star-schema relational model connecting customer order transactions to line-item product facts, authored custom DAX measures for dynamic AOV and profit margin analysis, and evaluated payment mode distributions and geographic sales concentration.
               </p>
               <div class="project-actions">
                 <a href="https://github.com/Alokkr00/Power-BI-project-1-Madhav-store-data" target="_blank" rel="noopener noreferrer" class="btn-project primary">GitHub Repository ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8: Vaccine Uptake ML -->
+          <div class="project-card reveal reveal-delay-1" data-category="data-fintech">
+            <div class="project-visual" style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(99, 102, 241, 0.2));">
+              <span class="project-brand-badge">Multi-Label ML 💉</span>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Scikit-learn</span>
+                <span class="project-tag">Multi-Label ML</span>
+                <span class="project-tag">Pandas</span>
+                <span class="project-tag">ROC-AUC</span>
+              </div>
+              <h3>Vaccine Uptake Multi-Label Prediction Pipeline</h3>
+              <div class="project-metrics">
+                <span class="metric-pill">🏆 IIT Guwahati Hackathon</span>
+                <span class="metric-pill">🎯 Mean ROC-AUC</span>
+                <span class="metric-pill">👥 26K Respondents</span>
+              </div>
+              <div class="project-arch-flow">
+                <span class="arch-flow-label">Data Pipeline:</span>
+                <code>Survey Telemetry (35 features) → Pandas → MultiOutputClassifier → Calibrated Probabilities → ROC-AUC</code>
+              </div>
+              <p class="project-result">
+                Multi-label machine learning pipeline engineered for the IIT Guwahati Data Analytics Hackathon. Analyzed demographic and behavioural telemetry across 26,000+ respondents to simultaneously predict H1N1 and Seasonal flu vaccination uptake, evaluated on competitive mean ROC-AUC metrics.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/Alokkr00/Hackathon" target="_blank" rel="noopener noreferrer" class="btn-project primary">GitHub Repository ↗</a>
               </div>
             </div>
           </div>
@@ -563,7 +613,7 @@
               </div>
               <div class="stage-proof">
                 <span class="proof-label">Implemented In:</span>
-                <a href="#projects" class="proof-link">H.A.T.S. Quant Engine &amp; Content Uploader ↗</a>
+                <a href="#projects" class="proof-link">H.A.T.S. Quant Engine &amp; Fast Ingress ↗</a>
               </div>
             </div>
 
@@ -638,7 +688,7 @@
               </div>
               <div class="stage-proof">
                 <span class="proof-label">Implemented In:</span>
-                <a href="#projects" class="proof-link">Customer Churn Pipeline &amp; Hackathon ↗</a>
+                <a href="#projects" class="proof-link">Customer Churn Pipeline &amp; Vaccine Uptake ML ↗</a>
               </div>
             </div>
 
@@ -751,7 +801,7 @@
               </div>
               <div class="skill-pills-wrap">
                 <span class="skill-pill">🧪 Pytest &amp; UnitTesting</span>
-                <span class="skill-pill">🛡️ Django TestCase (19/19 Passing)</span>
+                <span class="skill-pill">🛡️ Django TestCase (23/23 Passing)</span>
                 <span class="skill-pill">⚡ Vitest (Component Tests)</span>
                 <span class="skill-pill">🔀 GitHub Actions CI/CD</span>
                 <span class="skill-pill">📋 Schema Validation (Pydantic)</span>

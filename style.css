@@ -500,24 +500,23 @@ code, .mono-font, .stat-number, .badge, .project-tag {
   border-radius: 12px;
   margin-bottom: 1.5rem;
   box-shadow: var(--glow-subtle);
+  min-height: 48px;
 }
 
 .terminal-prompt {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--accent-cyan);
-  margin-right: 0.75rem;
+  margin-right: 0;
   font-weight: 600;
 }
 
 .role-text {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--text-primary);
-  min-width: 250px;
-  display: inline-block;
-  text-align: left;
+  display: inline;
 }
 
 .typewriter-cursor {
@@ -646,6 +645,80 @@ code, .mono-font, .stat-number, .badge, .project-tag {
   background: var(--bg-card-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ======================
+   Availability Strip (Task D)
+   ====================== */
+.availability-strip {
+  width: 100%;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(13, 18, 29, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.85rem 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+[data-theme='light'] .availability-strip {
+  background: rgba(241, 245, 249, 0.9);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.availability-strip-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.avail-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.avail-icon {
+  font-size: 1rem;
+}
+
+.avail-divider {
+  color: var(--accent-cyan);
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .availability-strip-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    font-size: 0.82rem;
+  }
+  .avail-divider {
+    display: none;
+  }
+}
+
+.text-link {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.text-link:hover {
+  color: var(--accent-blue);
 }
 
 /* ======================
@@ -1768,7 +1841,9 @@ section {
 
 .form-alert-container p[hidden],
 .form-success[hidden],
-.form-error[hidden] {
+.form-error[hidden],
+.form-success:not(.visible),
+.form-error:not(.visible) {
   display: none !important;
 }
 
