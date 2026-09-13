@@ -607,4 +607,43 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  /* ----------------------------------------------------------
+     12. Tech Architecture View Switcher (Pipeline Flow vs Depth Matrix)
+  ---------------------------------------------------------- */
+  const techTabBtns = document.querySelectorAll('.tech-tab-btn');
+  const techPanels = document.querySelectorAll('.tech-view-panel');
+
+  if (techTabBtns.length > 0 && techPanels.length > 0) {
+    techTabBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetView = btn.getAttribute('data-view');
+
+        // Update tab button states
+        techTabBtns.forEach((b) => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        // Update panel visibility
+        techPanels.forEach((panel) => {
+          if (panel.id === `view-${targetView}`) {
+            panel.classList.add('active');
+            panel.removeAttribute('hidden');
+
+            // Trigger visibility for cards in the newly revealed panel
+            panel.querySelectorAll('.reveal').forEach((el) => {
+              el.classList.add('visible');
+            });
+          } else {
+            panel.classList.remove('active');
+            panel.setAttribute('hidden', 'true');
+          }
+        });
+      });
+    });
+  }
 });
+

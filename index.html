@@ -469,78 +469,245 @@
       </div>
     </section>
 
-    <!-- ========== Skills & Tech Matrix ========== -->
+    <!-- ========== Skills & Tech Architecture ========== -->
     <section class="skills" id="skills">
       <div class="skills-container">
-        <span class="section-label">— Tech Stack</span>
-        <h2 class="section-title">Technical Matrix & Toolkit</h2>
-        
-        <div class="skills-matrix">
-          
-          <!-- Category 1: Core & Languages -->
-          <div class="skill-category-card reveal">
-            <div class="skill-category-header">
-              <span class="skill-category-icon">⚡</span>
-              <h3>Core & Languages</h3>
-            </div>
-            <div class="skill-pills-wrap">
-              <span class="skill-pill">🐍 Python 3.11 / 3.12</span>
-              <span class="skill-pill">🗃️ SQL / PL-SQL</span>
-              <span class="skill-pill">💙 TypeScript</span>
-              <span class="skill-pill">💻 Bash Scripting</span>
-              <span class="skill-pill">🧱 DSA Algorithms</span>
-            </div>
-          </div>
+        <span class="section-label">— Tech Stack & Architecture</span>
+        <h2 class="section-title">Technical Matrix & Data Pipelines</h2>
+        <p class="section-subtitle">
+          Demonstrating architectural orchestration from ingress to business serving, grounded in rigorous software engineering.
+        </p>
 
-          <!-- Category 2: Data & Storage -->
-          <div class="skill-category-card reveal reveal-delay-1">
-            <div class="skill-category-header">
-              <span class="skill-category-icon">🗄️</span>
-              <h3>Data & Databases</h3>
-            </div>
-            <div class="skill-pills-wrap">
-              <span class="skill-pill">📊 Pandas / NumPy</span>
-              <span class="skill-pill">🐘 PostgreSQL</span>
-              <span class="skill-pill">🛠️ dbt-core 1.7</span>
-              <span class="skill-pill">🌪️ Apache Airflow 2.8</span>
-              <span class="skill-pill">💾 SQLite / MinIO</span>
-              <span class="skill-pill">🔄 ETL & Feature Marts</span>
-            </div>
-          </div>
-
-          <!-- Category 3: AI & Analytics -->
-          <div class="skill-category-card reveal reveal-delay-2">
-            <div class="skill-category-header">
-              <span class="skill-category-icon">🤖</span>
-              <h3>AI & Analytics</h3>
-            </div>
-            <div class="skill-pills-wrap">
-              <span class="skill-pill">✨ Gemini API</span>
-              <span class="skill-pill">🧠 Scikit-learn & LightGBM</span>
-              <span class="skill-pill">🔬 MLflow Tracking</span>
-              <span class="skill-pill">📈 Power BI & Tableau</span>
-              <span class="skill-pill">📓 Jupyter Notebooks</span>
-              <span class="skill-pill">👁️ Keras / TensorFlow</span>
-            </div>
-          </div>
-
-          <!-- Category 4: Backend & Cloud -->
-          <div class="skill-category-card reveal reveal-delay-3">
-            <div class="skill-category-header">
-              <span class="skill-category-icon">☁️</span>
-              <h3>Backend & Cloud</h3>
-            </div>
-            <div class="skill-pills-wrap">
-              <span class="skill-pill">🚀 FastAPI & Django 4.2</span>
-              <span class="skill-pill">⚛️ Next.js 14</span>
-              <span class="skill-pill">🐳 Docker Compose</span>
-              <span class="skill-pill">🏗️ Terraform (IaC)</span>
-              <span class="skill-pill">🎈 Streamlit Hub</span>
-              <span class="skill-pill">🔀 GitHub Actions CI</span>
-            </div>
-          </div>
-
+        <!-- View Switcher Tabs -->
+        <div class="tech-view-tabs reveal" role="tablist" aria-label="Tech stack view perspective">
+          <button class="tech-tab-btn active" role="tab" aria-selected="true" aria-controls="view-pipeline" id="tab-pipeline" data-view="pipeline">
+            <span class="tab-icon">🔄</span> Data Lifecycle Pipeline
+          </button>
+          <button class="tech-tab-btn" role="tab" aria-selected="false" aria-controls="view-depth" id="tab-depth" data-view="depth">
+            <span class="tab-icon">📊</span> T-Shaped Depth Matrix
+          </button>
         </div>
+
+        <!-- View 1: Data Lifecycle Pipeline Flow -->
+        <div class="tech-view-panel active" id="view-pipeline" role="tabpanel" aria-labelledby="tab-pipeline">
+          <div class="pipeline-flow-container">
+            
+            <!-- Stage 1 -->
+            <div class="pipeline-stage-card reveal">
+              <div class="stage-header">
+                <span class="stage-step">STAGE 01</span>
+                <span class="stage-badge ingress">Ingress & Telemetry</span>
+              </div>
+              <h3 class="stage-title">Ingestion & Feeds</h3>
+              <p class="stage-desc">High-concurrency API ingress, market data feeds, and asynchronous media streams with backpressure management.</p>
+              <div class="stage-tools">
+                <span class="tool-tag">FastAPI Ingress</span>
+                <span class="tool-tag">Alpaca Market API</span>
+                <span class="tool-tag">WebSockets</span>
+                <span class="tool-tag">REST Adapters</span>
+                <span class="tool-tag">Async Workers</span>
+              </div>
+              <div class="stage-proof">
+                <span class="proof-label">Implemented In:</span>
+                <a href="#projects" class="proof-link">H.A.T.S. Quant Engine &amp; Content Uploader ↗</a>
+              </div>
+            </div>
+
+            <div class="pipeline-flow-connector" aria-hidden="true">
+              <span class="connector-arrow">➔</span>
+            </div>
+
+            <!-- Stage 2 -->
+            <div class="pipeline-stage-card reveal reveal-delay-1">
+              <div class="stage-header">
+                <span class="stage-step">STAGE 02</span>
+                <span class="stage-badge orchestrate">Orchestration</span>
+              </div>
+              <h3 class="stage-title">Workflow Scheduling</h3>
+              <p class="stage-desc">Deterministic DAG execution, automated dependency graphs, sensor triggers, and failure retry management.</p>
+              <div class="stage-tools">
+                <span class="tool-tag">Apache Airflow 2.8</span>
+                <span class="tool-tag">Cron Batch Schedules</span>
+                <span class="tool-tag">DAG Sensors</span>
+                <span class="tool-tag">Docker Compose</span>
+                <span class="tool-tag">Bash Automation</span>
+              </div>
+              <div class="stage-proof">
+                <span class="proof-label">Implemented In:</span>
+                <a href="#projects" class="proof-link">Customer Churn MLOps Pipeline ↗</a>
+              </div>
+            </div>
+
+            <div class="pipeline-flow-connector" aria-hidden="true">
+              <span class="connector-arrow">➔</span>
+            </div>
+
+            <!-- Stage 3 -->
+            <div class="pipeline-stage-card reveal reveal-delay-2">
+              <div class="stage-header">
+                <span class="stage-step">STAGE 03</span>
+                <span class="stage-badge transform">Storage & Modeling</span>
+              </div>
+              <h3 class="stage-title">Dimensional Marts</h3>
+              <p class="stage-desc">Modular SQL transformations, star-schema fact/dim modeling, atomic SQLite WAL logs, and relational optimization.</p>
+              <div class="stage-tools">
+                <span class="tool-tag">dbt-core 1.7</span>
+                <span class="tool-tag">PostgreSQL</span>
+                <span class="tool-tag">Star Schema Modeling</span>
+                <span class="tool-tag">SQLite WAL</span>
+                <span class="tool-tag">Pandas &amp; NumPy</span>
+              </div>
+              <div class="stage-proof">
+                <span class="proof-label">Implemented In:</span>
+                <a href="#projects" class="proof-link">Churn dbt Marts &amp; Madhav Store Retail BI ↗</a>
+              </div>
+            </div>
+
+            <div class="pipeline-flow-connector" aria-hidden="true">
+              <span class="connector-arrow">➔</span>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="pipeline-stage-card reveal reveal-delay-3">
+              <div class="stage-header">
+                <span class="stage-step">STAGE 04</span>
+                <span class="stage-badge governance">ML & Governance</span>
+              </div>
+              <h3 class="stage-title">Training & Governance</h3>
+              <p class="stage-desc">Automated model promotion gates (ΔAUC ≥ 0.01), Population Stability Index (PSI) drift monitoring, and MLflow tracking.</p>
+              <div class="stage-tools">
+                <span class="tool-tag">LightGBM &amp; Scikit-learn</span>
+                <span class="tool-tag">MLflow Registry</span>
+                <span class="tool-tag">ΔAUC &amp; PSI Stability</span>
+                <span class="tool-tag">MultiOutputClassifier</span>
+                <span class="tool-tag">Gemini 1.5 Pro</span>
+              </div>
+              <div class="stage-proof">
+                <span class="proof-label">Implemented In:</span>
+                <a href="#projects" class="proof-link">Customer Churn Pipeline &amp; Hackathon ↗</a>
+              </div>
+            </div>
+
+            <div class="pipeline-flow-connector" aria-hidden="true">
+              <span class="connector-arrow">➔</span>
+            </div>
+
+            <!-- Stage 5 -->
+            <div class="pipeline-stage-card reveal reveal-delay-4">
+              <div class="stage-header">
+                <span class="stage-step">STAGE 05</span>
+                <span class="stage-badge serving">Serving & Insights</span>
+              </div>
+              <h3 class="stage-title">Serving & Decision UI</h3>
+              <p class="stage-desc">Sub-30ms inference microservices, executive DAX dashboards, interactive simulators, and Next.js SSR apps.</p>
+              <div class="stage-tools">
+                <span class="tool-tag">FastAPI (Sub-30ms)</span>
+                <span class="tool-tag">Power BI Desktop (DAX)</span>
+                <span class="tool-tag">Streamlit Retention Hub</span>
+                <span class="tool-tag">Next.js 14 App Router</span>
+                <span class="tool-tag">Django 4.2 LTS</span>
+              </div>
+              <div class="stage-proof">
+                <span class="proof-label">Implemented In:</span>
+                <a href="#projects" class="proof-link">Churn Streamlit Hub &amp; GatherCraft AI ↗</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- View 2: T-Shaped Depth Matrix -->
+        <div class="tech-view-panel" id="view-depth" role="tabpanel" aria-labelledby="tab-depth" hidden>
+          <div class="depth-matrix-grid">
+            
+            <!-- Tier 1: Daily Production Drivers -->
+            <div class="depth-tier-card tier-core reveal">
+              <div class="depth-tier-header">
+                <div class="tier-indicator">
+                  <span class="tier-pill core">Tier 1 · Daily Drivers</span>
+                  <span class="tier-level">Architectural Mastery</span>
+                </div>
+                <h3>Core Production Systems</h3>
+                <p>Technologies used on a daily basis for production data pipelines, database modeling, and backend engineering.</p>
+              </div>
+              <div class="skill-pills-wrap">
+                <span class="skill-pill">🐍 Python 3.11 / 3.12</span>
+                <span class="skill-pill">🗃️ SQL / PL-SQL</span>
+                <span class="skill-pill">🐘 PostgreSQL</span>
+                <span class="skill-pill">🌪️ Apache Airflow 2.8</span>
+                <span class="skill-pill">🛠️ dbt-core 1.7</span>
+                <span class="skill-pill">📊 Star Schema Modeling</span>
+                <span class="skill-pill">🚀 FastAPI</span>
+                <span class="skill-pill">🧱 DSA Algorithms</span>
+              </div>
+            </div>
+
+            <!-- Tier 2: Production-Tested Frameworks -->
+            <div class="depth-tier-card tier-tested reveal reveal-delay-1">
+              <div class="depth-tier-header">
+                <div class="tier-indicator">
+                  <span class="tier-pill tested">Tier 2 · Deployed</span>
+                  <span class="tier-level">Production-Tested</span>
+                </div>
+                <h3>Analytics, ML & Infrastructure</h3>
+                <p>Libraries and engines actively deployed in end-to-end applications with automated gates and containerized workloads.</p>
+              </div>
+              <div class="skill-pills-wrap">
+                <span class="skill-pill">🧠 LightGBM &amp; Scikit-learn</span>
+                <span class="skill-pill">🔬 MLflow Tracking</span>
+                <span class="skill-pill">📈 Power BI (DAX / Modeling)</span>
+                <span class="skill-pill">🐳 Docker Compose</span>
+                <span class="skill-pill">🎈 Streamlit Dashboards</span>
+                <span class="skill-pill">📊 Pandas / NumPy EDA</span>
+                <span class="skill-pill">🏛️ Django 4.2 LTS</span>
+                <span class="skill-pill">✨ Gemini API</span>
+              </div>
+            </div>
+
+            <!-- Tier 3: Specialized Edge & Cloud -->
+            <div class="depth-tier-card tier-specialized reveal reveal-delay-2">
+              <div class="depth-tier-header">
+                <div class="tier-indicator">
+                  <span class="tier-pill specialized">Tier 3 · Edge & Cloud</span>
+                  <span class="tier-level">Specialized Systems</span>
+                </div>
+                <h3>Distributed, Edge & Frontend</h3>
+                <p>Offline-first nodes, conflict-free synchronization, automated cloud provisioning, and reactive web applications.</p>
+              </div>
+              <div class="skill-pills-wrap">
+                <span class="skill-pill">💙 TypeScript</span>
+                <span class="skill-pill">⚛️ Next.js 14 App Router</span>
+                <span class="skill-pill">💾 SQLite WAL Mode</span>
+                <span class="skill-pill">🔄 CQRS &amp; Vector Clocks</span>
+                <span class="skill-pill">🏗️ Terraform (IaC)</span>
+                <span class="skill-pill">⚡ WebSockets</span>
+                <span class="skill-pill">💻 Bash Automation</span>
+              </div>
+            </div>
+
+            <!-- Tier 4: Testing & Reliability Engineering -->
+            <div class="depth-tier-card tier-testing reveal reveal-delay-3">
+              <div class="depth-tier-header">
+                <div class="tier-indicator">
+                  <span class="tier-pill testing">Tier 4 · Reliability</span>
+                  <span class="tier-level">Quality & CI/CD</span>
+                </div>
+                <h3>Testing & Deployment Pipeline</h3>
+                <p>Guaranteed code integrity via rigorous automated test suites, type checking, and GitHub Actions continuous deployment.</p>
+              </div>
+              <div class="skill-pills-wrap">
+                <span class="skill-pill">🧪 Pytest &amp; UnitTesting</span>
+                <span class="skill-pill">🛡️ Django TestCase (19/19 Passing)</span>
+                <span class="skill-pill">⚡ Vitest (Component Tests)</span>
+                <span class="skill-pill">🔀 GitHub Actions CI/CD</span>
+                <span class="skill-pill">📋 Schema Validation (Pydantic)</span>
+                <span class="skill-pill">🔒 Anti-IDOR &amp; RBAC Security</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
