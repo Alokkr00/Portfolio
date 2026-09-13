@@ -514,8 +514,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btnText) btnText.style.display = 'none';
       if (btnLoading) btnLoading.style.display = 'inline-flex';
       if (submitBtn) submitBtn.disabled = true;
-      if (formSuccess) formSuccess.hidden = true;
-      if (formError) formError.hidden = true;
+      if (formSuccess) {
+        formSuccess.hidden = true;
+        formSuccess.style.display = 'none';
+        formSuccess.classList.remove('visible');
+      }
+      if (formError) {
+        formError.hidden = true;
+        formError.style.display = 'none';
+        formError.classList.remove('visible');
+      }
 
       try {
         const response = await fetch(contactForm.action, {
@@ -525,7 +533,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (response.ok) {
-          if (formSuccess) formSuccess.hidden = false;
+          if (formSuccess) {
+            formSuccess.hidden = false;
+            formSuccess.style.display = 'block';
+            formSuccess.classList.add('visible');
+          }
           contactForm.reset();
           Object.keys(fields).forEach((key) => {
             const field = fields[key];
@@ -542,7 +554,11 @@ document.addEventListener('DOMContentLoaded', () => {
           throw new Error('Server returned non-200 status');
         }
       } catch (err) {
-        if (formError) formError.hidden = false;
+        if (formError) {
+          formError.hidden = false;
+          formError.style.display = 'block';
+          formError.classList.add('visible');
+        }
       } finally {
         if (btnText) btnText.style.display = 'inline';
         if (btnLoading) btnLoading.style.display = 'none';

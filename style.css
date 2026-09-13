@@ -536,8 +536,60 @@ code, .mono-font, .stat-number, .badge, .project-tag {
   font-size: clamp(1.05rem, 2vw, 1.2rem);
   color: var(--text-secondary);
   max-width: 680px;
-  margin: 0 auto 2.2rem;
+  margin: 0 auto 1.5rem;
   line-height: 1.7;
+}
+
+/* Recruiter 6-Second Candidate Snapshot Strip */
+.hero-telemetry-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  margin: 0 auto 2.2rem;
+  max-width: 880px;
+  padding: 0.75rem 1.4rem;
+  border-radius: 9999px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--glow-subtle);
+}
+
+.telemetry-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+}
+
+.telemetry-pill strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.telemetry-icon {
+  font-size: 0.95rem;
+}
+
+.telemetry-separator {
+  color: var(--text-dim);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .hero-telemetry-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 16px;
+    padding: 1rem 1.25rem;
+    gap: 0.6rem;
+  }
+  .telemetry-separator {
+    display: none;
+  }
 }
 
 .hero-cta {
@@ -1714,11 +1766,14 @@ section {
   margin-top: 1rem;
 }
 
-.form-alert-container p[hidden] {
+.form-alert-container p[hidden],
+.form-success[hidden],
+.form-error[hidden] {
   display: none !important;
 }
 
 .form-success {
+  display: none;
   color: var(--accent-emerald);
   font-size: 0.9rem;
   text-align: center;
@@ -1729,6 +1784,7 @@ section {
 }
 
 .form-error {
+  display: none;
   color: #FF6B6B;
   font-size: 0.9rem;
   text-align: center;
@@ -1736,6 +1792,11 @@ section {
   border-radius: 8px;
   background: rgba(255, 107, 107, 0.1);
   border: 1px solid rgba(255, 107, 107, 0.25);
+}
+
+.form-success.visible,
+.form-error.visible {
+  display: block !important;
 }
 
 .form-privacy {
