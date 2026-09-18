@@ -193,7 +193,7 @@
           
           <div class="about-stats reveal reveal-delay-3">
             <div class="stat-card">
-              <span class="stat-number" data-target="8">0</span>
+              <span class="stat-number" data-target="9">0</span>
               <span class="stat-label">Flagship Systems</span>
             </div>
             <div class="stat-card">
@@ -326,11 +326,11 @@
 
         <!-- Interactive Category Filter Tabs -->
         <div class="project-filter-bar reveal" role="tablist" aria-label="Project filter categories">
-          <button class="filter-btn active" role="tab" aria-selected="true" aria-controls="projects-grid" id="tab-all" data-filter="all">All Systems (8)</button>
-          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="projects-grid" id="tab-fintech" data-filter="data-fintech">Data &amp; FinTech (5)</button>
+          <button class="filter-btn active" role="tab" aria-selected="true" aria-controls="projects-grid" id="tab-all" data-filter="all">All Systems (9)</button>
+          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="projects-grid" id="tab-fintech" data-filter="data-fintech">Data &amp; FinTech (6)</button>
           <button class="filter-btn" role="tab" aria-selected="false" aria-controls="projects-grid" id="tab-ai" data-filter="distributed-ai">Distributed Systems &amp; AI (3)</button>
         </div>
-        <div id="filter-status-announcer" class="sr-only" aria-live="polite">Showing all 8 projects</div>
+        <div id="filter-status-announcer" class="sr-only" aria-live="polite">Showing all 9 projects</div>
         
         <div class="projects-grid" id="projects-grid">
 
@@ -368,6 +368,37 @@
             </div>
           </div>
 
+          <!-- Card 1B: E-Commerce Telemetry & Forecasting Pipeline -->
+          <div class="project-card reveal reveal-delay-1" data-category="data-fintech">
+            <div class="project-visual" style="background: linear-gradient(135deg, rgba(242, 200, 17, 0.2), rgba(56, 189, 248, 0.2));">
+              <span class="project-brand-badge">Telemetry Pipeline 📡</span>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">SQL</span>
+                <span class="project-tag">ARIMA</span>
+                <span class="project-tag">Pandas</span>
+                <span class="project-tag">Power BI</span>
+                <span class="project-tag">Tableau</span>
+              </div>
+              <h3>E-Commerce Telemetry &amp; Demand Forecasting Pipeline</h3>
+              <div class="project-metrics">
+                <span class="metric-pill">📡 1M+ Daily Events</span>
+                <span class="metric-pill">⏱️ 10hr → 4hr Runtime</span>
+                <span class="metric-pill">📉 25% Stockout Reduction</span>
+              </div>
+              <div class="project-arch-flow">
+                <span class="arch-flow-label">Data Pipeline:</span>
+                <code>Ad Server Logs → Python ETL → SQL Warehouse → ARIMA Forecasting → Power BI / Tableau Dashboards</code>
+              </div>
+              <p class="project-result">
+                Automated ingestion pipeline built for a regional e-commerce client, processing 1M+ daily ad server telemetry events. Replaced a 10-hour manual reporting workflow with an automated 4-hour batch pipeline. Built ARIMA time-series forecasting models across 200+ inventory SKUs to reduce stockouts by 25%, and designed 5 interactive Power BI and Tableau dashboards with star-schema data models for executive reporting.
+              </p>
+              <p class="project-cold-start-note">🔒 Client engagement — source code under NDA. Architecture and metrics are verifiable in interview.</p>
+            </div>
+          </div>
+
           <!-- Card 2: HATS Trading Engine -->
           <div class="project-card reveal reveal-delay-1" data-category="data-fintech">
             <div class="project-visual" style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(16, 185, 129, 0.2));">
@@ -399,6 +430,7 @@
                 <a href="https://hats-ae7x.onrender.com/docs" target="_blank" rel="noopener noreferrer" class="btn-project primary">Live API Docs ↗</a>
                 <a href="https://github.com/Alokkr00/HATS-Trading-Engine" target="_blank" rel="noopener noreferrer" class="btn-project">GitHub Repository ↗</a>
               </div>
+              <p class="project-cold-start-note">⏳ Free-tier host — first load may take ~50s to spin up.</p>
             </div>
           </div>
 
