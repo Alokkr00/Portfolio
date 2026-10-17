@@ -188,12 +188,12 @@
             I build data pipelines, backend APIs, and analytical tools with a strong foundation in Computer Science (B.Tech 2024), Python, and SQL. I focus on clean data modeling, reproducible batch workflows, and maintainable software.
           </p>
           <p class="reveal reveal-delay-2">
-            My work includes building an automated customer churn pipeline using dbt and Apache Airflow, developing a quantitative trading engine backed by 198 unit tests, and competing as a finalist in the <a href="https://github.com/Alokkr00/Hackathon" target="_blank" rel="noopener noreferrer" class="text-link">IIT Guwahati Data Analytics Hackathon</a>. I care about writing tested code, optimizing SQL queries, and designing systems that are straightforward to run and debug.
+            My work includes engineering the <a href="https://github.com/Alokkr00/mushroom-analytics" target="_blank" rel="noopener noreferrer" class="text-link">MycoMetrics modern data stack</a> (DuckDB &amp; dbt Core) for commercial AgTech analytics, building an automated customer churn pipeline using dbt and Apache Airflow, developing a quantitative trading engine backed by 198 unit tests, and competing as a finalist in the <a href="https://github.com/Alokkr00/Hackathon" target="_blank" rel="noopener noreferrer" class="text-link">IIT Guwahati Data Analytics Hackathon</a>. I care about writing tested code, optimizing SQL queries, and designing systems that are straightforward to run and debug.
           </p>
           
           <div class="about-stats reveal reveal-delay-3">
             <div class="stat-card">
-              <span class="stat-number" data-target="7">0</span>
+              <span class="stat-number" data-target="8">0</span>
               <span class="stat-label">Showcase Systems</span>
             </div>
             <div class="stat-card">
@@ -201,7 +201,7 @@
               <span class="stat-label">Stress Scenarios</span>
             </div>
             <div class="stat-card">
-              <span class="stat-number" data-target="21">0</span>
+              <span class="stat-number" data-target="22">0</span>
               <span class="stat-label">Public Repositories</span>
             </div>
           </div>
@@ -210,7 +210,7 @@
             <a href="Alok-Kumar-Resume.pdf" download="Alok-Kumar-Resume.pdf" class="btn-resume">📄 Download Complete Résumé</a>
             <a href="https://github.com/Alokkr00" target="_blank" rel="noopener noreferrer" class="about-github-pill">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              <span>21 Repositories on GitHub ↗</span>
+              <span>22 Repositories on GitHub ↗</span>
             </a>
           </div>
 
@@ -321,16 +321,49 @@
 
         <!-- Interactive Category Filter Tabs -->
         <div class="project-filter-bar reveal" role="tablist" aria-label="Project filter categories">
-          <button class="filter-btn active" role="tab" aria-selected="true" aria-controls="projects-grid" id="tab-all" data-filter="all">All Systems (7)</button>
-          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="projects-grid" id="tab-fintech" data-filter="data-fintech">Data &amp; FinTech (4)</button>
+          <button class="filter-btn active" role="tab" aria-selected="true" aria-controls="projects-grid" id="tab-all" data-filter="all">All Systems (8)</button>
+          <button class="filter-btn" role="tab" aria-selected="false" aria-controls="projects-grid" id="tab-fintech" data-filter="data-fintech">Data &amp; FinTech (5)</button>
           <button class="filter-btn" role="tab" aria-selected="false" aria-controls="projects-grid" id="tab-ai" data-filter="distributed-ai">Distributed Systems &amp; AI (3)</button>
         </div>
-        <div id="filter-status-announcer" class="sr-only" aria-live="polite">Showing all 7 projects</div>
+        <div id="filter-status-announcer" class="sr-only" aria-live="polite">Showing all 8 projects</div>
         
         <div class="projects-grid" id="projects-grid">
 
-          <!-- Card 1: Customer Churn MLOps Pipeline -->
+          <!-- Card 1: MycoMetrics - AgTech Analytics & Modern Data Stack -->
           <div class="project-card reveal" data-category="data-fintech">
+            <div class="project-visual" style="background: linear-gradient(135deg, rgba(255, 105, 75, 0.2), rgba(255, 240, 0, 0.2));">
+              <span class="project-brand-badge">AgTech Analytics 🍄</span>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="project-tag">Python 3.12</span>
+                <span class="project-tag">DuckDB</span>
+                <span class="project-tag">dbt Core 1.12</span>
+                <span class="project-tag">Power BI</span>
+                <span class="project-tag">Pytest (87 tests)</span>
+                <span class="project-tag">GitHub Actions</span>
+              </div>
+              <h3>MycoMetrics — Commercial AgTech Analytics &amp; Modern Data Stack</h3>
+              <div class="project-metrics">
+                <span class="metric-pill">🦆 DuckDB + dbt Medallion</span>
+                <span class="metric-pill">🛡️ 87 dbt + 10 Pytest Tests</span>
+                <span class="metric-pill">📊 Power BI Yield Models</span>
+              </div>
+              <div class="project-arch-flow">
+                <span class="arch-flow-label">Data Pipeline:</span>
+                <code>Harvest &amp; Ledger Logs (SHA-256) → DuckDB → dbt Medallion (38 models) → CI/CD Gates → Power BI Dashboards</code>
+              </div>
+              <p class="project-result">
+                A real-world freelance analytics case study and modern data stack for an urban indoor mushroom cultivation business. Refactored ad-hoc operational tracking into a 4-tier dbt Core Medallion dimensional architecture (38 models, 87 automated tests) in DuckDB, with cryptographic row fingerprinting (SHA-256) for idempotent loads, automated GitHub Actions CI/CD quality gates ($0.00 / 0.000 kg variance), and executive Power BI dashboards modeling biological yield and unit-cost economics.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/Alokkr00/mushroom-analytics" target="_blank" rel="noopener noreferrer" class="btn-project primary">GitHub Repository ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Customer Churn MLOps Pipeline -->
+          <div class="project-card reveal reveal-delay-1" data-category="data-fintech">
             <div class="project-visual" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(0, 229, 255, 0.2));">
               <span class="project-brand-badge">Churn Pipeline 🔄</span>
             </div>
