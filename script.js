@@ -184,10 +184,9 @@ document.addEventListener('DOMContentLoaded', () => {
      6. Role Typewriter Animation
   ---------------------------------------------------------- */
   const roles = [
-    'Data Engineer',
     'Data Analyst',
-    'AI Systems Builder',
-    'Quantitative Developer',
+    'Analytics Engineer',
+    'Data Engineer',
     'Python & SQL Specialist'
   ];
 

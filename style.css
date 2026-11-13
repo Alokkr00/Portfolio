@@ -35,7 +35,7 @@
   --text-primary: #F8FAFC;
   --text-secondary: #CBD5E1;
   --text-muted: #94A3B8;
-  --text-dim: #64748B;
+  --text-dim: #8899B5; /* WCAG AA 5.2:1 compliant on dark theme */
 
   /* Project Card Components */
   --project-badge-color: #FFFFFF;
@@ -1179,23 +1179,85 @@ section {
 }
 
 .project-visual {
-  height: 190px;
+  height: 180px;
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
   border-bottom: 1px solid var(--glass-border);
   overflow: hidden;
 }
 
+.project-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+[data-theme='light'] .project-visual::before {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
+.project-window-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+}
+
+.window-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.window-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red { background: #FF5F56; }
+.dot-yellow { background: #FFBD2E; }
+.dot-green { background: #27C93F; }
+
+.window-slug {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+}
+
+.project-visual-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  z-index: 1;
+}
+
 .project-brand-badge {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.75rem;
+  font-size: 1.65rem;
   font-weight: 800;
+  letter-spacing: -0.02em;
   color: var(--project-badge-color);
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
   z-index: 1;
+  text-align: center;
 }
 
 [data-theme='light'] .project-brand-badge {
@@ -1324,11 +1386,6 @@ section {
   border-color: var(--accent-cyan);
   background: rgba(var(--accent-cyan-rgb), 0.15);
   color: var(--accent-cyan);
-}
-
-.btn-project.primary:hover {
-  background: #22eeff;
-  color: #080B11;
 }
 
 .btn-project.primary:hover {
