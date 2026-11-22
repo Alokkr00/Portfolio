@@ -62,6 +62,7 @@
       <a href="#hero" class="nav-logo" aria-label="Alok Kumar Home">Alok<span class="logo-dot" aria-hidden="true">.</span></a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#services">Capabilities</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Tech Stack</a></li>
@@ -229,6 +230,95 @@
       </div>
     </section>
 
+    <!-- ========== Experience Section (Client Practice) ========== -->
+    <section class="experience" id="experience">
+      <div class="experience-container">
+        <span class="section-label reveal">— Professional Track Record</span>
+        <h2 class="section-title reveal reveal-delay-1">Independent <span class="highlight">Data Analyst</span> Practice</h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          Hands-on client engagements across e-commerce, commercial AgTech, and logistics operations — turning unstructured spreadsheets and database dumps into automated pipelines and decision-ready dashboards.
+        </p>
+
+        <div class="experience-timeline reveal reveal-delay-3">
+          
+          <div class="experience-card">
+            <div class="exp-header">
+              <div class="exp-role-meta">
+                <span class="exp-badge">Active Practice</span>
+                <h3 class="exp-title">Independent Data Analyst &amp; Analytics Engineer</h3>
+                <p class="exp-company">Freelance Client Engagements · Remote</p>
+              </div>
+              <div class="exp-period">
+                <span class="exp-date">Aug 2024 — Present</span>
+                <span class="exp-duration">1+ Year</span>
+              </div>
+            </div>
+
+            <div class="exp-body">
+              <p class="exp-summary">
+                Contracted directly with small-to-midsize business stakeholders to resolve operational data bottlenecks, automate repetitive spreadsheet collation, and deliver production business intelligence dashboards.
+              </p>
+
+              <div class="exp-deliverables">
+                <div class="exp-deliverable-item">
+                  <div class="deliv-header">
+                    <span class="deliv-icon" aria-hidden="true">🍄</span>
+                    <strong>Commercial AgTech &amp; E-Commerce (MycoMetrics)</strong>
+                  </div>
+                  <p>
+                    Unified offline harvest logs and online Shopify store sales data into a central DuckDB warehouse with dbt Core transformations. Replaced manual tracking sheets with an automated Power BI dashboard used by leadership for weekly harvest yield analysis and batch profitability reviews.
+                  </p>
+                </div>
+
+                <div class="exp-deliverable-item">
+                  <div class="deliv-header">
+                    <span class="deliv-icon" aria-hidden="true">🛒</span>
+                    <strong>E-Commerce Retailers (Shopify &amp; Multi-Channel)</strong>
+                  </div>
+                  <p>
+                    Cleaned and consolidated messy sales extracts, unindexed SQL dumps, and inventory CSVs into normalized schemas. Engineered Python automation scripts that eliminated recurring hours of manual data collation, providing store owners with clear dashboards tracking return rates, product velocity, and customer repeat orders.
+                  </p>
+                </div>
+
+                <div class="exp-deliverable-item">
+                  <div class="deliv-header">
+                    <span class="deliv-icon" aria-hidden="true">🚚</span>
+                    <strong>Logistics &amp; Dispatch Operators</strong>
+                  </div>
+                  <p>
+                    Transformed raw shipment tracking spreadsheets into interactive Tableau and Power BI dispatch monitoring dashboards. Designed standardized SQL cleanup queries to flag missing delivery timestamps, unassigned waybills, and operational route bottlenecks for daily dispatch coordination.
+                  </p>
+                </div>
+
+                <div class="exp-deliverable-item">
+                  <div class="deliv-header">
+                    <span class="deliv-icon" aria-hidden="true">⚙️</span>
+                    <strong>Automated ETL &amp; Spreadsheet Replacement</strong>
+                  </div>
+                  <p>
+                    Replaced error-prone manual copy-paste spreadsheet routines with scheduled Python/SQL ingestion scripts. Automated data validation checks to catch nulls, duplicate transactions, and schema drift before data reached stakeholder reporting layers.
+                  </p>
+                </div>
+              </div>
+
+              <div class="exp-tech-used">
+                <span class="exp-tech-label">Core Tools Deployed:</span>
+                <span class="exp-pill">SQL (PostgreSQL / MySQL)</span>
+                <span class="exp-pill">Python (Pandas)</span>
+                <span class="exp-pill">Power BI (DAX)</span>
+                <span class="exp-pill">Tableau</span>
+                <span class="exp-pill">DuckDB</span>
+                <span class="exp-pill">dbt Core</span>
+                <span class="exp-pill">Shopify Data Integration</span>
+                <span class="exp-pill">Automated ETL</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- ========== Services / Capabilities Bento Grid ========== -->
     <section class="services" id="services">
       <div class="services-container">
@@ -353,7 +443,7 @@
                 <code>Harvest &amp; Ledger Logs (SHA-256) → DuckDB → dbt Medallion (38 models) → CI/CD Gates → Power BI Dashboards</code>
               </div>
               <p class="project-result">
-                A real-world freelance analytics case study and modern data stack for an urban indoor mushroom cultivation business. Refactored ad-hoc operational tracking into a 4-tier dbt Core Medallion dimensional architecture (38 models, 87 automated tests) in DuckDB, with cryptographic row fingerprinting (SHA-256) for idempotent loads, automated GitHub Actions CI/CD quality gates ($0.00 / 0.000 kg variance), and executive Power BI dashboards modeling biological yield and unit-cost economics.
+                A real-world freelance analytics project for an urban indoor mushroom cultivation business with an active Shopify store. Refactored ad-hoc operational spreadsheets and online sales exports into a 4-tier dbt Core Medallion dimensional architecture (38 models, 87 automated tests) in DuckDB, with cryptographic row fingerprinting (SHA-256) for idempotent loads and automated GitHub Actions CI/CD quality gates ($0.00 / 0.000 kg variance). Built executive Power BI dashboards connecting farm harvest logs with online orders, giving leadership clear visibility into batch yields and unit economics during weekly operational reviews.
               </p>
               <div class="project-actions">
                 <a href="https://github.com/Alokkr00/mushroom-analytics" target="_blank" rel="noopener noreferrer" class="btn-project primary">GitHub Repository ↗</a>
@@ -397,7 +487,7 @@
                 <code>PostgreSQL → dbt Staging &amp; Marts → LightGBM / MLflow → Airflow Daily DAG → FastAPI &amp; Streamlit</code>
               </div>
               <p class="project-result">
-                An end-to-end data pipeline predicting subscription customer churn. Includes modular dbt SQL transformations across staging and marts layers, model evaluation gates before deployment, daily batch scoring with Apache Airflow DAGs, and a FastAPI inference service with an interactive Streamlit retention dashboard.
+                An end-to-end analytics engineering pipeline predicting customer subscription churn. Built modular dbt SQL transformations across staging and marts layers in PostgreSQL, automated model evaluation gates to prevent degraded models from deploying, scheduled daily batch scoring with Apache Airflow DAGs, and served churn risk probabilities to an interactive Streamlit retention dashboard to help customer success teams prioritize high-risk accounts.
               </p>
               <div class="project-actions">
                 <a href="https://github.com/Alokkr00/Customer-Churn-Pipeline" target="_blank" rel="noopener noreferrer" class="btn-project primary">GitHub Repository ↗</a>
