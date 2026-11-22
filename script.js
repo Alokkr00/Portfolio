@@ -186,8 +186,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const roles = [
     'Data Analyst',
     'Analytics Engineer',
-    'Data Engineer',
-    'Python & SQL Specialist'
+    'SQL & Python Specialist',
+    'BI & Data Modeling'
   ];
 
   const roleTextEl = document.getElementById('role-text');
